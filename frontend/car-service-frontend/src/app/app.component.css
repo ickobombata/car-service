@@ -1,0 +1,7 @@
+/* Add app-wide styles here */
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}

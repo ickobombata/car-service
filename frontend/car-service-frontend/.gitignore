@@ -1,0 +1,29 @@
+# Node
+/node_modules
+/.pnp
+.pnp.js
+
+# IDEs and editors
+/.idea
+.vscode/*
+!.vscode/extensions.json
+/.history
+
+# Build artifacts
+/dist
+/build
+/out-tsc
+
+# Dependency logs
+/npm-debug.log*
+/.yarn-integrity
+.env
+
+# OS generated files
+.DS_Store
+thumbs.db
+
+# Angular specific
+/src/assets/.gitkeep
+/src/environments/environment*.ts
+/.angular/cache
