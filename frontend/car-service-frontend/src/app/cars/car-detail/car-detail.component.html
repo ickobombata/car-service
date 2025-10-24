@@ -1,0 +1,147 @@
+<div class="car-detail-container">
+  <!-- Back Navigation -->
+  <div class="back-navigation">
+    <button (click)="goBack()" class="back-button">
+      <span class="back-arrow">←</span>
+      Back to Inventory
+    </button>
+  </div>
+
+  <!-- Car Detail Content -->
+  <div class="content-wrapper" *ngIf="car">
+    <!-- Car Header -->
+    <section class="car-header">
+      <div class="car-title-section">
+        <h1>{{ car.year }} {{ car.make }} {{ car.model }}</h1>
+        <div class="car-basic-info">
+          <span class="car-price">${{ car.price.toLocaleString() }}</span>
+          <span class="car-condition" [ngClass]="'condition-' + car.condition.toLowerCase().replace(' ', '-')">
+            {{ car.condition }}
+          </span>
+        </div>
+        <div class="car-specs-overview">
+          <span class="spec-overview">{{ car.mileage.toLocaleString() }} miles</span>
+          <span class="spec-overview">{{ car.transmission }}</span>
+          <span class="spec-overview">{{ car.fuelType }}</span>
+          <span class="spec-overview">{{ car.color }}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="image-gallery">
+      <div class="main-image-container">
+        <img [src]="selectedImage.url" [alt]="selectedImage.alt" class="main-image">
+        <div class="image-overlay">
+          <button (click)="previousImage()" class="gallery-nav prev" [disabled]="currentImageIndex === 0">‹</button>
+          <button (click)="nextImage()" class="gallery-nav next" [disabled]="currentImageIndex === car.images.length - 1">›</button>
+        </div>
+      </div>
+      <div class="thumbnail-container">
+        <div class="thumbnail" 
+             *ngFor="let image of car.images; let i = index"
+             [class.active]="i === currentImageIndex"
+             (click)="selectImage(i)">
+          <img [src]="image.url" [alt]="image.alt" class="thumbnail-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Car Details Grid -->
+    <div class="details-grid">
+      <!-- Left Column - Description & Features -->
+      <div class="details-left">
+        <section class="description-section">
+          <h2>Description</h2>
+          <p>{{ car.description }}</p>
+        </section>
+
+        <section class="features-section">
+          <h2>Features & Options</h2>
+          <div class="features-grid">
+            <div class="feature-item" *ngFor="let feature of car.features">
+              <span class="feature-icon">✓</span>
+              <span class="feature-text">{{ feature }}</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="warranty-section">
+          <h2>Warranty Information</h2>
+          <div class="warranty-card">
+            <div class="warranty-icon">🛡️</div>
+            <div class="warranty-content">
+              <h3>{{ car.warranty }}</h3>
+              <p>Comprehensive warranty coverage on all mechanical components</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column - Specifications & Contact -->
+      <div class="details-right">
+        <section class="specifications-section">
+          <h2>Specifications</h2>
+          <div class="specs-table">
+            <div class="spec-row" *ngFor="let spec of car.specifications">
+              <span class="spec-key">{{ spec.key }}</span>
+              <span class="spec-value">{{ spec.value }}</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-section">
+          <h2>Interested in this vehicle?</h2>
+          <div class="contact-card">
+            <div class="contact-info">
+              <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <span class="contact-text">(123) 456-7890</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <span class="contact-text">info&#64;carservice.com</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <span class="contact-text">123 Main Street, City, State</span>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <button class="contact-btn primary" (click)="scheduleTestDrive()">
+                Schedule Test Drive
+              </button>
+              <button class="contact-btn secondary" (click)="requestInfo()">
+                Request More Info
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="vehicle-info-section">
+          <h2>Vehicle Information</h2>
+          <div class="vehicle-info-card">
+            <div class="info-row">
+              <span class="info-label">Stock Number:</span>
+              <span class="info-value">{{ car.stockNumber }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">VIN:</span>
+              <span class="info-value">{{ car.vin }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Date Added:</span>
+              <span class="info-value">{{ formatDate(car.dateAdded) }}</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div class="loading-container" *ngIf="!car">
+    <div class="loading-spinner"></div>
+    <p>Loading vehicle details...</p>
+  </div>
+</div>

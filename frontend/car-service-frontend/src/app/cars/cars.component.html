@@ -1,0 +1,55 @@
+<div class="cars-container">
+  <!-- Cars Listing Section -->
+  <div class="content-wrapper">
+    <section class="cars-listing">
+      <div class="listing-header">
+        <h2>Available Vehicles</h2>
+        <div class="filter-controls">
+          <select [(ngModel)]="selectedMake" (change)="filterCars()" class="filter-select">
+            <option value="">All Makes</option>
+            <option *ngFor="let make of availableMakes" [value]="make">{{ make }}</option>
+          </select>
+          <select [(ngModel)]="selectedPriceRange" (change)="filterCars()" class="filter-select">
+            <option value="">All Price Ranges</option>
+            <option value="0-20000">Under $20,000</option>
+            <option value="20000-25000">$20,000 - $25,000</option>
+            <option value="25000-30000">$25,000 - $30,000</option>
+            <option value="30000+">Over $30,000</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cars-grid">
+        <div class="car-card" *ngFor="let car of filteredCars" (click)="viewCarDetail(car.id)">
+          <div class="car-image-container">
+            <img [src]="getMainImage(car)" [alt]="car.make + ' ' + car.model" class="car-image">
+            <div class="car-badge" [ngClass]="'condition-' + car.condition.toLowerCase().replace(' ', '-')">
+              {{ car.condition }}
+            </div>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">{{ car.year }} {{ car.make }} {{ car.model }}</h3>
+            <div class="car-specs">
+              <span class="spec-item">{{ car.mileage.toLocaleString() }} miles</span>
+              <span class="spec-item">{{ car.transmission }}</span>
+              <span class="spec-item">{{ car.fuelType }}</span>
+            </div>
+            <p class="car-description">{{ car.description.substring(0, 100) }}...</p>
+            <div class="car-features">
+              <span class="feature-tag" *ngFor="let feature of car.features.slice(0, 3)">{{ feature }}</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">${{ car.price.toLocaleString() }}</div>
+              <div class="car-warranty">{{ car.warranty }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="no-results" *ngIf="filteredCars.length === 0">
+        <h3>No vehicles found</h3>
+        <p>Try adjusting your filters to see more results.</p>
+      </div>
+    </section>
+  </div>
+</div>
