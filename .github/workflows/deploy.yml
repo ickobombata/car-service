@@ -33,6 +33,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: frontend/car-service-frontend/dist/car-service-frontend/browser
+          folder: frontend/car-service-frontend/dist/browser
           token: ${{ secrets.GH_PAT }}
 
