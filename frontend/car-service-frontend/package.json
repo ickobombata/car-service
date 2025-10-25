@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:gh": "ng build --output-path=dist/car-service-frontend --base-href=/ --deploy-url=/car-service-frontend/",
+    "build:gh": "ng build --output-path=dist/car-service-frontend --base-href=/ --deploy-url=/",
     "deploy": "npx angular-cli-ghpages --dir=dist/car-service-frontend",
     "deploy:full": "npm run build:gh && npm run deploy"
   },
