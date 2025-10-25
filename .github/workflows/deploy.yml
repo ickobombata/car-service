@@ -34,4 +34,5 @@ jobs:
         with:
           branch: gh-pages
           folder: frontend/car-service-frontend/dist/car-service-frontend/browser
+          token: ${{ secrets.GITHUB_TOKEN }}
 
