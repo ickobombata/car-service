@@ -7,8 +7,9 @@
     </button>
   </div>
 
+  
   <!-- Car Detail Content -->
-  <div class="content-wrapper" *ngIf="car">
+  <div class="content-wrapper" *ngIf="car && !isLoading">
     <!-- Car Header -->
     <section class="car-header">
       <div class="car-title-section">
@@ -140,7 +141,7 @@
   </div>
 
   <!-- Loading State -->
-  <div class="loading-container" *ngIf="!car">
+  <div class="loading-container" *ngIf="isLoading">
     <div class="loading-spinner"></div>
     <p>Loading vehicle details...</p>
   </div>

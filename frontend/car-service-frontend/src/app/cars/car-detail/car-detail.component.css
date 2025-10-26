@@ -450,6 +450,29 @@ section h2 {
   font-size: 1.1rem;
 }
 
+.feature-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 1.5rem auto;
+}
+
+.feature-switch label {
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.feature-switch input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #2563eb;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .content-wrapper {

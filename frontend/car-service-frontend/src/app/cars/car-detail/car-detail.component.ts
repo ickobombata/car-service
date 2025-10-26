@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Car, MOCK_CARS } from '../car-data';
+import { Car, mapPocketbaseCarToCar, PocketbaseCar } from '../car-data';
+import { CarService } from '../car.service';
 
 @Component({
   selector: 'app-car-detail',
@@ -11,26 +12,40 @@ export class CarDetailComponent implements OnInit {
   car: Car | undefined;
   currentImageIndex = 0;
   selectedImage: any;
+  isLoading: boolean = true; // Loading indicator
+  // useMockData: boolean = false; // Feature switch for car detail
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private carService: CarService
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const carId = +params['id'];
+      const carId = params['id']; // carId is now a string
       this.loadCar(carId);
     });
   }
 
-  private loadCar(carId: number) {
+  public loadCar(carId: string) {
+    this.isLoading = true; // Set loading to true
+
     // Simulate API call
     setTimeout(() => {
-      this.car = MOCK_CARS.find(car => car.id === carId);
-      if (this.car) {
-        this.selectedImage = this.car.images[0];
-      }
+      this.carService.getCarById(carId).subscribe({
+        next: (response: PocketbaseCar) => {
+          this.car = mapPocketbaseCarToCar(response);
+          if (this.car) {
+            this.selectedImage = this.car.images[0];
+          }
+          this.isLoading = false; // Set loading to false after real data is loaded
+        },
+        error: (error) => {
+          console.error('Error fetching car details:', error);
+          this.isLoading = false; // Set loading to false even if there's an error
+        }
+      });
     }, 500);
   }
 
@@ -64,7 +79,7 @@ export class CarDetailComponent implements OnInit {
     this.router.navigate(['/contact-us'], {
       queryParams: {
         subject: 'schedule-test-drive',
-        message: `I'm interested in scheduling a test drive for the ${this.car?.year} ${this.car?.make} ${this.car?.model} (Stock #${this.car?.stockNumber}). Please contact me to arrange a convenient time.`
+        message: `I'm interested in scheduling a test drive for the ${this.car?.make} ${this.car?.model} (Stock #${this.car?.stockNumber || 'N/A'}). Please contact me to arrange a convenient time.`
       }
     });
   }
@@ -74,12 +89,13 @@ export class CarDetailComponent implements OnInit {
     this.router.navigate(['/contact-us'], {
       queryParams: {
         subject: 'request-info',
-        message: `I'm interested in getting more information about the ${this.car?.year} ${this.car?.make} ${this.car?.model} (Stock #${this.car?.stockNumber}). Please provide additional details about this vehicle.`
+        message: `I'm interested in getting more information about the ${this.car?.make} ${this.car?.model} (Stock #${this.car?.stockNumber || 'N/A'}). Please provide additional details about this vehicle.`
       }
     });
   }
 
   formatDate(dateString: string): string {
+    if (!dateString) return 'N/A';
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 
       year: 'numeric', 
