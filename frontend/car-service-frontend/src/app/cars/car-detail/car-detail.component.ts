@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Car, mapPocketbaseCarToCar, PocketbaseCar } from '../car-data';
+import { Car } from '../car-data';
 import { CarService } from '../car.service';
 
 @Component({
@@ -34,8 +34,8 @@ export class CarDetailComponent implements OnInit {
     // Simulate API call
     setTimeout(() => {
       this.carService.getCarById(carId).subscribe({
-        next: (response: PocketbaseCar) => {
-          this.car = mapPocketbaseCarToCar(response);
+        next: (response: Car | undefined) => {
+          this.car = response;
           if (this.car) {
             this.selectedImage = this.car.images[0];
           }

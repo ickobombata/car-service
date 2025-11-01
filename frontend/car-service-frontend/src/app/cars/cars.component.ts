@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Car, mapPocketbaseCarToCar } from './car-data';
+import { Car } from './car-data';
 import { CarService } from './car.service';
 
 @Component({
@@ -27,8 +27,8 @@ export class CarsComponent implements OnInit {
     // Simulate API call
     setTimeout(() => {
       this.carService.getCars().subscribe({
-        next: response => {
-          this.cars = response.items.map(mapPocketbaseCarToCar);
+        next: (response: Car[]) => {
+          this.cars = response;
           this.filteredCars = [...this.cars];
           this.availableMakes = [...new Set(this.cars.map(car => car.make))].sort();
           this.isLoading = false; // Set loading to false after real data is loaded
