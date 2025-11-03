@@ -4,10 +4,10 @@
     <div class="contact-grid">
       <!-- Contact Form Section -->
       <section class="contact-form-section">
-        <h2>Send us a Message</h2>
+        <h2>{{ 'CONTACT_US.SEND_MESSAGE_TITLE' | translate }}</h2>
         <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
           <div class="form-group">
-            <label for="name">Full Name *</label>
+            <label for="name">{{ 'CONTACT_US.FULL_NAME_LABEL' | translate }}</label>
             <input 
               type="text" 
               id="name" 
@@ -15,11 +15,11 @@
               [(ngModel)]="contactFormData.name" 
               required 
               class="form-input"
-              placeholder="Enter your full name">
+              placeholder="{{ 'CONTACT_US.FULL_NAME_PLACEHOLDER' | translate }}">
           </div>
 
           <div class="form-group">
-            <label for="email">Email Address *</label>
+            <label for="email">{{ 'CONTACT_US.EMAIL_LABEL' | translate }}</label>
             <input 
               type="email" 
               id="email" 
@@ -27,40 +27,40 @@
               [(ngModel)]="contactFormData.email" 
               required 
               class="form-input"
-              placeholder="Enter your email address">
+              placeholder="{{ 'CONTACT_US.EMAIL_PLACEHOLDER' | translate }}">
           </div>
 
           <div class="form-group">
-            <label for="phone">Phone Number</label>
+            <label for="phone">{{ 'CONTACT_US.PHONE_NUMBER_LABEL' | translate }}</label>
             <input 
               type="tel" 
               id="phone" 
               name="phone" 
               [(ngModel)]="contactFormData.phone" 
               class="form-input"
-              placeholder="Enter your phone number">
+              placeholder="{{ 'CONTACT_US.PHONE_NUMBER_PLACEHOLDER' | translate }}">
           </div>
 
           <div class="form-group">
-            <label for="subject">Subject *</label>
+            <label for="subject">{{ 'CONTACT_US.SUBJECT_LABEL' | translate }}</label>
             <select 
               id="subject" 
               name="subject" 
               [(ngModel)]="contactFormData.subject" 
               required 
               class="form-select">
-              <option value="">Select a subject</option>
-              <option value="general">General Inquiry</option>
-              <option value="service">Service Request</option>
-              <option value="appointment">Schedule Appointment</option>
-              <option value="quote">Request Quote</option>
-              <option value="complaint">Complaint</option>
-              <option value="other">Other</option>
+              <option value="">{{ 'CONTACT_US.SELECT_SUBJECT_OPTION' | translate }}</option>
+              <option value="general">{{ 'CONTACT_US.GENERAL_INQUIRY_OPTION' | translate }}</option>
+              <option value="service">{{ 'CONTACT_US.SERVICE_REQUEST_OPTION' | translate }}</option>
+              <option value="appointment">{{ 'CONTACT_US.SCHEDULE_APPOINTMENT_OPTION' | translate }}</option>
+              <option value="quote">{{ 'CONTACT_US.REQUEST_QUOTE_OPTION' | translate }}</option>
+              <option value="complaint">{{ 'CONTACT_US.COMPLAINT_OPTION' | translate }}</option>
+              <option value="other">{{ 'CONTACT_US.OTHER_OPTION' | translate }}</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="message">Message *</label>
+            <label for="message">{{ 'CONTACT_US.MESSAGE_LABEL' | translate }}</label>
             <textarea 
               id="message" 
               name="message" 
@@ -68,25 +68,25 @@
               required 
               rows="6" 
               class="form-textarea"
-              placeholder="Tell us how we can help you..."></textarea>
+              placeholder="{{ 'CONTACT_US.MESSAGE_PLACEHOLDER' | translate }}"></textarea>
           </div>
 
           <button type="submit" class="submit-btn" [disabled]="!contactForm.form.valid">
-            Send Message
+            {{ 'CONTACT_US.SEND_MESSAGE_BUTTON' | translate }}
           </button>
         </form>
       </section>
 
       <!-- Contact Information Section -->
       <section class="contact-info-section">
-        <h2>Get in Touch</h2>
+        <h2>{{ 'CONTACT_US.GET_IN_TOUCH_TITLE' | translate }}</h2>
         
         <div class="contact-methods">
           <div class="contact-method">
             <div class="method-icon">📞</div>
             <div class="method-content">
-              <h3>Phone</h3>
-              <p>Call us for immediate assistance</p>
+              <h3>{{ 'CONTACT_US.PHONE_TITLE' | translate }}</h3>
+              <p>{{ 'CONTACT_US.PHONE_DESCRIPTION' | translate }}</p>
               <a href="tel:+1234567890" class="contact-link">(123) 456-7890</a>
             </div>
           </div>
@@ -94,8 +94,8 @@
           <div class="contact-method">
             <div class="method-icon">📧</div>
             <div class="method-content">
-              <h3>Email</h3>
-              <p>Send us an email anytime</p>
+              <h3>{{ 'CONTACT_US.EMAIL_TITLE' | translate }}</h3>
+              <p>{{ 'CONTACT_US.EMAIL_DESCRIPTION' | translate }}</p>
               <a href="mailto:info&#64;carservice.com" class="contact-link">info&#64;carservice.com</a>
             </div>
           </div>
@@ -103,8 +103,8 @@
           <div class="contact-method">
             <div class="method-icon">📍</div>
             <div class="method-content">
-              <h3>Address</h3>
-              <p>Visit us at our location</p>
+              <h3>{{ 'CONTACT_US.ADDRESS_TITLE' | translate }}</h3>
+              <p>{{ 'CONTACT_US.ADDRESS_DESCRIPTION' | translate }}</p>
               <address class="contact-link">
                 123 Main Street<br>
                 City, State 12345
@@ -115,12 +115,12 @@
           <div class="contact-method">
             <div class="method-icon">🕒</div>
             <div class="method-content">
-              <h3>Business Hours</h3>
-              <p>We're here to help</p>
+              <h3>{{ 'CONTACT_US.BUSINESS_HOURS_TITLE' | translate }}</h3>
+              <p>{{ 'CONTACT_US.BUSINESS_HOURS_DESCRIPTION' | translate }}</p>
               <div class="hours">
-                <div>Monday - Friday: 8:00 AM - 6:00 PM</div>
-                <div>Saturday: 9:00 AM - 4:00 PM</div>
-                <div>Sunday: Closed</div>
+                <div>{{ 'CONTACT_US.BUSINESS_HOURS_WEEKDAY' | translate }}</div>
+                <div>{{ 'CONTACT_US.BUSINESS_HOURS_SATURDAY' | translate }}</div>
+                <div>{{ 'CONTACT_US.BUSINESS_HOURS_SUNDAY' | translate }}</div>
               </div>
             </div>
           </div>
@@ -128,17 +128,17 @@
 
         <!-- Emergency Contact -->
         <div class="emergency-contact">
-          <h3>🚨 Emergency Service</h3>
-          <p>Need immediate assistance? Call our emergency line:</p>
+          <h3>{{ 'CONTACT_US.EMERGENCY_SERVICE_TITLE' | translate }}</h3>
+          <p>{{ 'CONTACT_US.EMERGENCY_SERVICE_DESCRIPTION' | translate }}</p>
           <a href="tel:+1234567891" class="emergency-link">(123) 456-7891</a>
-          <p class="emergency-note">Available 24/7 for urgent repairs</p>
+          <p class="emergency-note">{{ 'CONTACT_US.EMERGENCY_SERVICE_NOTE' | translate }}</p>
         </div>
       </section>
     </div>
 
     <!-- Google Maps Section -->
     <section class="map-section">
-      <h2>Find Us</h2>
+      <h2>{{ 'CONTACT_US.FIND_US_TITLE' | translate }}</h2>
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sus!4v1625097600000!5m2!1sen!2sus"
@@ -151,9 +151,9 @@
         </iframe>
       </div>
       <div class="map-info">
-        <p>📍 <strong>Our Location:</strong> 123 Main Street, City, State 12345</p>
-        <p>🚗 <strong>Parking:</strong> Free parking available in front of our building</p>
-        <p>🚌 <strong>Public Transport:</strong> Bus stop 2 minutes walk, Metro station 5 minutes walk</p>
+        <p>📍 <strong>{{ 'CONTACT_US.OUR_LOCATION' | translate }}</strong></p>
+        <p>🚗 <strong>{{ 'CONTACT_US.PARKING' | translate }}</strong></p>
+        <p>🚌 <strong>{{ 'CONTACT_US.PUBLIC_TRANSPORT' | translate }}</strong></p>
       </div>
     </section>
 
@@ -162,18 +162,18 @@
       <div class="info-cards">
         <div class="info-card">
           <div class="card-icon">⚡</div>
-          <h3>Quick Response</h3>
-          <p>We respond to all inquiries within 24 hours during business days.</p>
+          <h3>{{ 'CONTACT_US.QUICK_RESPONSE_TITLE' | translate }}</h3>
+          <p>{{ 'CONTACT_US.QUICK_RESPONSE_DESCRIPTION' | translate }}</p>
         </div>
         <div class="info-card">
           <div class="card-icon">🛡️</div>
-          <h3>Fully Insured</h3>
-          <p>All our work is backed by comprehensive insurance coverage.</p>
+          <h3>{{ 'CONTACT_US.FULLY_INSURED_TITLE' | translate }}</h3>
+          <p>{{ 'CONTACT_US.FULLY_INSURED_DESCRIPTION' | translate }}</p>
         </div>
         <div class="info-card">
           <div class="card-icon">⭐</div>
-          <h3>Customer Satisfaction</h3>
-          <p>Your satisfaction is our priority. We stand behind our work.</p>
+          <h3>{{ 'CONTACT_US.CUSTOMER_SATISFACTION_TITLE' | translate }}</h3>
+          <p>{{ 'CONTACT_US.CUSTOMER_SATISFACTION_DESCRIPTION' | translate }}</p>
         </div>
       </div>
     </section>

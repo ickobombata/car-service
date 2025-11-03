@@ -1,13 +1,13 @@
 <nav class="navbar">
   <div class="navbar-brand">
     <img src="assets/logo.png" alt="Car Service Logo" class="logo">
-    <span class="app-name">Car Service</span>
+    <span class="app-name" >{{ 'APP.NAME' | translate }}</span>
   </div>
   <ul class="nav-links">
-    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/cars" routerLinkActive="active">Cars</a></li>
-    <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
-    <li><a routerLink="/contact-us" routerLinkActive="active">Contact Us</a></li>
-    <li><a routerLink="/about-us" routerLinkActive="active">About Us</a></li>
+    <li><a routerLink="/home" routerLinkActive="active">{{ 'HEADER.HOME' | translate }}</a></li>
+    <li><a routerLink="/cars" routerLinkActive="active">{{ 'HEADER.CARS' | translate }}</a></li>
+    <li><a routerLink="/services" routerLinkActive="active">{{ 'HEADER.SERVICES' | translate }}</a></li>
+    <li><a routerLink="/contact-us" routerLinkActive="active">{{ 'HEADER.CONTACT_US' | translate }}</a></li>
+    <li><a routerLink="/about-us" routerLinkActive="active">{{ 'HEADER.ABOUT_US' | translate }}</a></li>
   </ul>
 </nav>

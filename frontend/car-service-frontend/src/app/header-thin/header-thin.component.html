@@ -5,4 +5,21 @@
     <a href="#" class="social-icon"><img src="assets/twitter.png" alt="Twitter"></a>
     <a href="#" class="social-icon"><img src="assets/linkedin.png" alt="LinkedIn"></a>
   </div>
+  <div class="language-switcher">
+    <button class="language-button" (click)="toggleDropdown()">
+      <img src="assets/{{ currentLanguage === 'en' ? 'english-flag.png' : 'slovenian-flag.png' }}" alt="{{ currentLanguage === 'en' ? ('LANG.ENGLISH_FLAG_ALT' | translate) : ('LANG.SLOVENIAN_FLAG_ALT' | translate) }}" class="flag-icon">
+      <span class="language-code">{{ currentLanguage === 'en' ? ('LANG.ENGLISH_CODE' | translate) : ('LANG.SLOVENIAN_CODE' | translate) }}</span>
+      <span class="dropdown-arrow">▼</span>
+    </button>
+    <div class="language-dropdown" [class.show]="dropdownOpen">
+      <a href="#" (click)="changeLanguage('en')" class="dropdown-item">
+        <img src="assets/english-flag.png" alt="{{ 'LANG.ENGLISH_FLAG_ALT' | translate }}" class="flag-icon">
+        <span class="language-code">{{ 'LANG.ENGLISH_CODE' | translate }}</span>
+      </a>
+      <a href="#" (click)="changeLanguage('si')" class="dropdown-item">
+        <img src="assets/slovenian-flag.png" alt="{{ 'LANG.SLOVENIAN_FLAG_ALT' | translate }}" class="flag-icon">
+        <span class="language-code">{{ 'LANG.SLOVENIAN_CODE' | translate }}</span>
+      </a>
+    </div>
+  </div>
 </div>

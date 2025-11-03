@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Car } from './car-data';
 import { CarService } from './car.service';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-cars',
@@ -16,7 +17,7 @@ export class CarsComponent implements OnInit {
   // selectedPriceRange = ''; // Removed as price is no longer in Car interface
   isLoading: boolean = true; // Loading indicator
 
-  constructor(private router: Router, private carService: CarService) {}
+  constructor(private router: Router, private carService: CarService, private translationService: TranslationService) {}
 
   ngOnInit() {
     this.loadCars();

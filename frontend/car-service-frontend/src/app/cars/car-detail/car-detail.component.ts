@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Car } from '../car-data';
 import { CarService } from '../car.service';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-car-detail',
@@ -12,13 +13,14 @@ export class CarDetailComponent implements OnInit {
   car: Car | undefined;
   currentImageIndex = 0;
   selectedImage: any;
-  isLoading: boolean = true; // Loading indicator
+  isLoading: boolean = true;
   // useMockData: boolean = false; // Feature switch for car detail
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private carService: CarService
+    private carService: CarService,
+    private translationService: TranslationService
   ) {}
 
   ngOnInit() {
@@ -79,7 +81,11 @@ export class CarDetailComponent implements OnInit {
     this.router.navigate(['/contact-us'], {
       queryParams: {
         subject: 'schedule-test-drive',
-        message: `I'm interested in scheduling a test drive for the ${this.car?.make} ${this.car?.model} (Stock #${this.car?.stockNumber || 'N/A'}). Please contact me to arrange a convenient time.`
+        message: this.translationService.getTranslation('CAR_DETAIL.SCHEDULE_TEST_DRIVE_MESSAGE', {
+          carMake: this.car?.make || '',
+          carModel: this.car?.model || '',
+          carStockNumber: this.car?.stockNumber || 'N/A'
+        })
       }
     });
   }
@@ -89,7 +95,11 @@ export class CarDetailComponent implements OnInit {
     this.router.navigate(['/contact-us'], {
       queryParams: {
         subject: 'request-info',
-        message: `I'm interested in getting more information about the ${this.car?.make} ${this.car?.model} (Stock #${this.car?.stockNumber || 'N/A'}). Please provide additional details about this vehicle.`
+        message: this.translationService.getTranslation('CAR_DETAIL.REQUEST_INFO_MESSAGE', {
+          carMake: this.car?.make || '',
+          carModel: this.car?.model || '',
+          carStockNumber: this.car?.stockNumber || 'N/A'
+        })
       }
     });
   }
@@ -97,7 +107,7 @@ export class CarDetailComponent implements OnInit {
   formatDate(dateString: string): string {
     if (!dateString) return 'N/A';
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
+    return date.toLocaleDateString(this.translationService.getCurrentLanguage(), { 
       year: 'numeric', 
       month: 'long', 
       day: 'numeric' 

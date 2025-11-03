@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SLIDER_CONTENT, CUSTOMER_REVIEWS, SliderContent, Review } from './slider-content';
+import { getSliderContent, getCustomerReviews, SliderContent, Review } from './slider-content';
+import { TranslationService } from '../services/translation.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +9,21 @@ import { SLIDER_CONTENT, CUSTOMER_REVIEWS, SliderContent, Review } from './slide
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  sliderContent: SliderContent[] = SLIDER_CONTENT;
-  customerReviews: Review[] = CUSTOMER_REVIEWS;
+  sliderContent: SliderContent[] = [];
+  customerReviews: Review[] = [];
   currentSlide = 0;
   currentReviewIndex = 0;
   reviewGroups: Review[][] = [];
   private slideInterval: any;
+  private langChangeSubscription: Subscription | undefined;
+
+  constructor(private translationService: TranslationService) {} // Inject TranslationService
 
   ngOnInit() {
+    this.langChangeSubscription = this.translationService.currentLanguage$.subscribe(() => {
+      this.initializeTranslatedContent();
+    });
     this.initializeSlider();
-    this.initializeReviews();
     this.startAutoSlide();
   }
 
@@ -24,6 +31,16 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (this.slideInterval) {
       clearInterval(this.slideInterval);
     }
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+  }
+
+  private initializeTranslatedContent() {
+    const translate = (key: string) => this.translationService.getTranslation(key);
+    this.sliderContent = getSliderContent(translate);
+    this.customerReviews = getCustomerReviews(translate);
+    this.initializeReviews(); // Re-initialize reviews to reflect new translations
   }
 
   private initializeSlider() {
@@ -81,7 +98,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   formatDate(dateString: string): string {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
+    return date.toLocaleDateString(this.translationService.getCurrentLanguage(), { 
       year: 'numeric', 
       month: 'long', 
       day: 'numeric' 
