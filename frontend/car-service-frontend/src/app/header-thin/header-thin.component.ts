@@ -35,16 +35,18 @@ export class HeaderThinComponent implements OnInit {
   changeLanguage(lang: string) {
     if (isPlatformBrowser(this.platformId)) {
       console.log('changeLanguage called with lang:', lang);
-      let fullLangCode = '';
-      if (lang === 'en') {
-        fullLangCode = 'en-US';
-      } else if (lang === 'si') {
-        fullLangCode = 'si-SI';
-      } else {
-        fullLangCode = lang; // Fallback for other languages if any
-      }
-      this.translationService.setLanguagePreference(fullLangCode);
+      this.translationService.setLanguagePreference(lang);
       window.location.reload();
+    }
+  }
+
+  getDisplayLanguage(fullLangCode: string): string {
+    if (fullLangCode === 'en-US') {
+      return 'en';
+    } else if (fullLangCode === 'si-SI') {
+      return 'si';
+    } else {
+      return fullLangCode; // Fallback
     }
   }
 } 

@@ -1,14 +1,8 @@
 <div class="header-thin">
-  <div class="social-icons">
-    <a href="#" class="social-icon"><img src="assets/facebook.png" alt="Facebook"></a>
-    <a href="#" class="social-icon"><img src="assets/instagram.png" alt="Instagram"></a>
-    <a href="#" class="social-icon"><img src="assets/twitter.png" alt="Twitter"></a>
-    <a href="#" class="social-icon"><img src="assets/linkedin.png" alt="LinkedIn"></a>
-  </div>
   <div class="language-switcher">
     <button class="language-button" (click)="toggleDropdown()">
-      <img src="assets/{{ currentLang === 'en-US' ? 'english-flag.png' : 'slovenian-flag.png' }}" alt="{{ currentLang === 'en-US' ? ('LANG.ENGLISH_FLAG_ALT' | translate) : ('LANG.SLOVENIAN_FLAG_ALT' | translate) }}" class="flag-icon">
-      <span class="language-code">{{ currentLang === 'en-US' ? ('LANG.ENGLISH_CODE' | translate) : ('LANG.SLOVENIAN_CODE' | translate) }}</span>
+      <img src="assets/{{ getDisplayLanguage(currentLang) === 'en' ? 'english-flag.png' : 'slovenian-flag.png' }}" alt="{{ getDisplayLanguage(currentLang) === 'en' ? ('LANG.ENGLISH_FLAG_ALT' | translate) : ('LANG.SLOVENIAN_FLAG_ALT' | translate) }}" class="flag-icon">
+      <span class="language-code">{{ getDisplayLanguage(currentLang) === 'en' ? ('LANG.ENGLISH_CODE' | translate) : ('LANG.SLOVENIAN_CODE' | translate) }}</span>
       <span class="dropdown-arrow">▼</span>
     </button>
     <div class="language-dropdown" [class.show]="dropdownOpen">
@@ -21,5 +15,11 @@
         <span class="language-code">{{ 'LANG.SLOVENIAN_CODE' | translate }}</span>
       </a>
     </div>
+  </div>
+  <div class="social-icons">
+    <a href="#" class="social-icon"><img src="assets/facebook.png" alt="Facebook"></a>
+    <a href="#" class="social-icon"><img src="assets/instagram.png" alt="Instagram"></a>
+    <a href="#" class="social-icon"><img src="assets/twitter.png" alt="Twitter"></a>
+    <a href="#" class="social-icon"><img src="assets/linkedin.png" alt="LinkedIn"></a>
   </div>
 </div>
