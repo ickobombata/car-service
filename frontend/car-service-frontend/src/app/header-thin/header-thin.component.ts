@@ -10,24 +10,20 @@ import { TranslationService } from '../services/translation.service';
 })
 export class HeaderThinComponent implements OnInit {
   dropdownOpen = false;
-  currentLanguage: string = 'en'; // Default to 'en'
+  currentLang: string = 'en-US';
 
   constructor(
-    @Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private platformId: Object,
-    private activatedRoute: ActivatedRoute,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document,
     private translationService: TranslationService
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.activatedRoute.queryParamMap.subscribe(params => {
-        this.currentLanguage = params.get('lang') || 'en';
-        this.translationService.setCurrentLanguage(this.currentLanguage);
-      });
       this.translationService.currentLanguage$.subscribe(lang => {
-        this.currentLanguage = lang;
+        this.currentLang = lang;
       });
     }
   }
@@ -38,13 +34,17 @@ export class HeaderThinComponent implements OnInit {
 
   changeLanguage(lang: string) {
     if (isPlatformBrowser(this.platformId)) {
-      this.router.navigate([], {
-        relativeTo: this.activatedRoute,
-        queryParams: { lang: lang === 'en' ? null : lang }, // Set lang query param, remove for en
-        queryParamsHandling: 'merge'
-      });
-      this.translationService.loadTranslations(lang).subscribe();
+      console.log('changeLanguage called with lang:', lang);
+      let fullLangCode = '';
+      if (lang === 'en') {
+        fullLangCode = 'en-US';
+      } else if (lang === 'si') {
+        fullLangCode = 'si-SI';
+      } else {
+        fullLangCode = lang; // Fallback for other languages if any
+      }
+      this.translationService.setLanguagePreference(fullLangCode);
+      window.location.reload();
     }
-    this.dropdownOpen = false;
   }
-}
+} 

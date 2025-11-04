@@ -7,16 +7,16 @@
   </div>
   <div class="language-switcher">
     <button class="language-button" (click)="toggleDropdown()">
-      <img src="assets/{{ currentLanguage === 'en' ? 'english-flag.png' : 'slovenian-flag.png' }}" alt="{{ currentLanguage === 'en' ? ('LANG.ENGLISH_FLAG_ALT' | translate) : ('LANG.SLOVENIAN_FLAG_ALT' | translate) }}" class="flag-icon">
-      <span class="language-code">{{ currentLanguage === 'en' ? ('LANG.ENGLISH_CODE' | translate) : ('LANG.SLOVENIAN_CODE' | translate) }}</span>
+      <img src="assets/{{ currentLang === 'en-US' ? 'english-flag.png' : 'slovenian-flag.png' }}" alt="{{ currentLang === 'en-US' ? ('LANG.ENGLISH_FLAG_ALT' | translate) : ('LANG.SLOVENIAN_FLAG_ALT' | translate) }}" class="flag-icon">
+      <span class="language-code">{{ currentLang === 'en-US' ? ('LANG.ENGLISH_CODE' | translate) : ('LANG.SLOVENIAN_CODE' | translate) }}</span>
       <span class="dropdown-arrow">▼</span>
     </button>
     <div class="language-dropdown" [class.show]="dropdownOpen">
-      <a href="#" (click)="changeLanguage('en')" class="dropdown-item">
+      <a href="#" (click)="changeLanguage('en-US')" class="dropdown-item">
         <img src="assets/english-flag.png" alt="{{ 'LANG.ENGLISH_FLAG_ALT' | translate }}" class="flag-icon">
         <span class="language-code">{{ 'LANG.ENGLISH_CODE' | translate }}</span>
       </a>
-      <a href="#" (click)="changeLanguage('si')" class="dropdown-item">
+      <a href="#" (click)="changeLanguage('si-SI')" class="dropdown-item">
         <img src="assets/slovenian-flag.png" alt="{{ 'LANG.SLOVENIAN_FLAG_ALT' | translate }}" class="flag-icon">
         <span class="language-code">{{ 'LANG.SLOVENIAN_CODE' | translate }}</span>
       </a>

@@ -8,14 +8,22 @@ import { tap } from 'rxjs/operators';
 })
 export class TranslationService {
   private translations: any = {};
-  private _currentLanguage = new BehaviorSubject<string>('en'); // Default to 'en'
+  private _currentLanguage = new BehaviorSubject<string>('en-US'); // Default to 'en-US'
   public readonly currentLanguage$ = this._currentLanguage.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.initLanguage();
+  }
+
+  private initLanguage() {
+    const storedLang = localStorage.getItem('userLang');
+    const initialLang = storedLang || 'en-US';
+    this.loadTranslations(initialLang).subscribe();
+  }
 
   public loadTranslations(lang: string): Observable<any> {
-    const fileLang = lang.split('-')[0]; // Use 'en' for 'en-US', 'si' for 'si-SI'
-    return this.http.get(`./assets/i18n/${fileLang}.json`).pipe(
+    // Use the full language code for the file name
+    return this.http.get(`./assets/i18n/${lang}.json`).pipe(
       tap(data => {
         this.translations = data;
         this._currentLanguage.next(lang);
@@ -39,6 +47,11 @@ export class TranslationService {
 
   public setCurrentLanguage(lang: string) {
     this._currentLanguage.next(lang);
+  }
+
+  public setLanguagePreference(lang: string): void {
+    localStorage.setItem('userLang', lang);
+    this.loadTranslations(lang).subscribe();
   }
 
   public getCurrentLanguage(): string {

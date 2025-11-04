@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,13 +17,6 @@ import { CarsComponent } from './cars/cars.component';
 import { CarDetailComponent } from './cars/car-detail/car-detail.component';
 import { TranslatePipe } from './shared/translate.pipe';
 import { TranslationService } from './services/translation.service';
-
-function appInitializer(translationService: TranslationService) {
-  return () => {
-    const initialLang = localStorage.getItem('currentLanguage') || 'en-US';
-    return translationService.loadTranslations(initialLang).toPromise();
-  };
-}
 
 @NgModule({
   declarations: [
@@ -47,13 +40,7 @@ function appInitializer(translationService: TranslationService) {
     RouterModule // Add RouterModule here
   ],
   providers: [
-    TranslationService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitializer,
-      deps: [TranslationService],
-      multi: true
-    }
+    TranslationService
   ],
   bootstrap: [AppComponent]
 })
