@@ -14,6 +14,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarDetailComponent } from './cars/car-detail/car-detail.component';
+import { TranslatePipe } from './shared/translate.pipe';
+import { TranslationService } from './services/translation.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { CarDetailComponent } from './cars/car-detail/car-detail.component';
     ContactUsComponent,
     AboutUsComponent,
     CarsComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { CarDetailComponent } from './cars/car-detail/car-detail.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TranslationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

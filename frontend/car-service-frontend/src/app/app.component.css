@@ -1,4 +1,7 @@
 /* Add app-wide styles here */
+body {
+  background-color: #1E2A38;
+}
 
 :host {
   display: flex;

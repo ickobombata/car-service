@@ -3,7 +3,7 @@
   <div class="back-navigation">
     <button (click)="goBack()" class="back-button">
       <span class="back-arrow">←</span>
-      Back to Inventory
+      {{ 'CAR_DETAIL.BACK_TO_INVENTORY_BUTTON' | translate }}
     </button>
   </div>
 
@@ -17,14 +17,14 @@
         <div class="car-basic-info">
           <span class="car-price">${{ car.price.toLocaleString() }}</span>
           <span class="car-condition" [ngClass]="'condition-' + car.condition.toLowerCase().replace(' ', '-')">
-            {{ car.condition }}
+            {{ 'CAR_DETAIL.CONDITION' | translate:{carCondition: car.condition} }}
           </span>
         </div>
         <div class="car-specs-overview">
-          <span class="spec-overview">{{ car.mileage.toLocaleString() }} miles</span>
-          <span class="spec-overview">{{ car.transmission }}</span>
-          <span class="spec-overview">{{ car.fuelType }}</span>
-          <span class="spec-overview">{{ car.color }}</span>
+          <span class="spec-overview">{{ 'CAR_DETAIL.MILEAGE' | translate:{carMileage: car.mileage.toLocaleString()} }}</span>
+          <span class="spec-overview">{{ 'CAR_DETAIL.TRANSMISSION' | translate:{carTransmission: car.transmission} }}</span>
+          <span class="spec-overview">{{ 'CAR_DETAIL.FUEL_TYPE' | translate:{carFuelType: car.fuelType} }}</span>
+          <span class="spec-overview">{{ 'CAR_DETAIL.COLOR' | translate:{carColor: car.color} }}</span>
         </div>
       </div>
     </section>
@@ -53,27 +53,27 @@
       <!-- Left Column - Description & Features -->
       <div class="details-left">
         <section class="description-section">
-          <h2>Description</h2>
-          <p>{{ car.description }}</p>
+          <h2>{{ 'CAR_DETAIL.DESCRIPTION_TITLE' | translate }}</h2>
+          <p>{{ 'CAR_DETAIL.DESCRIPTION' | translate:{carDescription: car.description} }}</p>
         </section>
 
         <section class="features-section">
-          <h2>Features & Options</h2>
+          <h2>{{ 'CAR_DETAIL.FEATURES_OPTIONS_TITLE' | translate }}</h2>
           <div class="features-grid">
             <div class="feature-item" *ngFor="let feature of car.features">
               <span class="feature-icon">✓</span>
-              <span class="feature-text">{{ feature }}</span>
+              <span class="feature-text">{{ 'CAR_DETAIL.FEATURE_ITEM' | translate:{feature: feature} }}</span>
             </div>
           </div>
         </section>
 
         <section class="warranty-section">
-          <h2>Warranty Information</h2>
+          <h2>{{ 'CAR_DETAIL.WARRANTY_INFORMATION_TITLE' | translate }}</h2>
           <div class="warranty-card">
             <div class="warranty-icon">🛡️</div>
             <div class="warranty-content">
-              <h3>{{ car.warranty }}</h3>
-              <p>Comprehensive warranty coverage on all mechanical components</p>
+              <h3>{{ 'CAR_DETAIL.WARRANTY_TYPE' | translate:{carWarranty: car.warranty} }}</h3>
+              <p>{{ 'CAR_DETAIL.WARRANTY_DESCRIPTION' | translate }}</p>
             </div>
           </div>
         </section>
@@ -82,17 +82,17 @@
       <!-- Right Column - Specifications & Contact -->
       <div class="details-right">
         <section class="specifications-section">
-          <h2>Specifications</h2>
+          <h2>{{ 'CAR_DETAIL.SPECIFICATIONS_TITLE' | translate }}</h2>
           <div class="specs-table">
             <div class="spec-row" *ngFor="let spec of car.specifications">
-              <span class="spec-key">{{ spec.key }}</span>
-              <span class="spec-value">{{ spec.value }}</span>
+              <span class="spec-key">{{ 'CAR_DETAIL.SPEC_KEY' | translate:{specKey: spec.key} }}</span>
+              <span class="spec-value">{{ 'CAR_DETAIL.SPEC_VALUE' | translate:{specValue: spec.value} }}</span>
             </div>
           </div>
         </section>
 
         <section class="contact-section">
-          <h2>Interested in this vehicle?</h2>
+          <h2>{{ 'CAR_DETAIL.INTERESTED_IN_THIS_VEHICLE_TITLE' | translate }}</h2>
           <div class="contact-card">
             <div class="contact-info">
               <div class="contact-item">
@@ -110,28 +110,28 @@
             </div>
             <div class="contact-actions">
               <button class="contact-btn primary" (click)="scheduleTestDrive()">
-                Schedule Test Drive
+                {{ 'CAR_DETAIL.SCHEDULE_TEST_DRIVE_BUTTON' | translate }}
               </button>
               <button class="contact-btn secondary" (click)="requestInfo()">
-                Request More Info
+                {{ 'CAR_DETAIL.REQUEST_MORE_INFO_BUTTON' | translate }}
               </button>
             </div>
           </div>
         </section>
 
         <section class="vehicle-info-section">
-          <h2>Vehicle Information</h2>
+          <h2>{{ 'CAR_DETAIL.VEHICLE_INFORMATION_TITLE' | translate }}</h2>
           <div class="vehicle-info-card">
             <div class="info-row">
-              <span class="info-label">Stock Number:</span>
+              <span class="info-label">{{ 'CAR_DETAIL.STOCK_NUMBER_LABEL' | translate }}</span>
               <span class="info-value">{{ car.stockNumber }}</span>
             </div>
             <div class="info-row">
-              <span class="info-label">VIN:</span>
+              <span class="info-label">{{ 'CAR_DETAIL.VIN_LABEL' | translate }}</span>
               <span class="info-value">{{ car.vin }}</span>
             </div>
             <div class="info-row">
-              <span class="info-label">Date Added:</span>
+              <span class="info-label">{{ 'CAR_DETAIL.DATE_ADDED_LABEL' | translate }}</span>
               <span class="info-value">{{ formatDate(car.dateAdded) }}</span>
             </div>
           </div>
@@ -143,6 +143,6 @@
   <!-- Loading State -->
   <div class="loading-container" *ngIf="isLoading">
     <div class="loading-spinner"></div>
-    <p>Loading vehicle details...</p>
+    <p>{{ 'CAR_DETAIL.LOADING_MESSAGE' | translate }}</p>
   </div>
 </div>

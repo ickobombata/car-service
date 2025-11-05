@@ -1,10 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+
 html, body {
   height: 100%;
   min-height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif; /* Default body font */
+  background-color: #1E2A38; /* Overall app background color */
+  color: #C0C0C0; /* Default text color */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Headings font */
+  color: #C0C0C0;
 }
 
 body {
@@ -15,3 +24,6 @@ body {
 .content-area {
   flex: 1;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

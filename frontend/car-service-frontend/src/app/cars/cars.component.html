@@ -3,10 +3,10 @@
   <div class="content-wrapper">
     <section class="cars-listing">
       <div class="listing-header">
-        <h2>Available Vehicles</h2>
+        <h2>{{ 'CARS.AVAILABLE_VEHICLES_TITLE' | translate }}</h2>
         <div class="filter-controls">
           <select [(ngModel)]="selectedMake" (change)="filterCars()" class="filter-select">
-            <option value="">All Makes</option>
+            <option value="">{{ 'CARS.ALL_MAKES_OPTION' | translate }}</option>
             <option *ngFor="let make of availableMakes" [value]="make">{{ make }}</option>
           </select>
         </div>
@@ -14,7 +14,7 @@
 
       <div class="loading-spinner-container" *ngIf="isLoading">
         <div class="loading-spinner"></div>
-        <p>Loading cars...</p>
+        <p>{{ 'CARS.LOADING_CARS_MESSAGE' | translate }}</p>
       </div>
 
       <div class="cars-grid" *ngIf="!isLoading">
@@ -29,8 +29,8 @@
       </div>
 
       <div class="no-results" *ngIf="!isLoading && filteredCars.length === 0">
-        <h3>No vehicles found</h3>
-        <p>Try adjusting your filters to see more results.</p>
+        <h3>{{ 'CARS.NO_VEHICLES_FOUND_TITLE' | translate }}</h3>
+        <p>{{ 'CARS.NO_VEHICLES_FOUND_DESCRIPTION' | translate }}</p>
       </div>
     </section>
   </div>

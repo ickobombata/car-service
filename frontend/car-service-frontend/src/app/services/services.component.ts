@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
-export class ServicesComponent { }
+export class ServicesComponent {
+  constructor(public translationService: TranslationService) { } // Inject TranslationService
+}

@@ -1,5 +1,6 @@
 .home-container {
   min-height: 100vh;
+  background-color: #1E2A38; /* Dark Blue */
 }
 
 /* Hero Slider Section */
@@ -22,9 +23,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: contain; /* Ensure image fits within the container */
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; /* Prevent image repetition */
+  background-color: #0D0D0D; /* Fill empty space with black background */
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
@@ -39,7 +41,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%); /* Darker overlay */
 }
 
 .slide-content {
@@ -53,7 +55,7 @@
 
 .slide-text {
   max-width: 600px;
-  color: white;
+  color: #C0C0C0; /* Silver Gray */
 }
 
 .slide-title {
@@ -62,6 +64,7 @@
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .slide-description {
@@ -70,24 +73,26 @@
   margin-bottom: 2rem;
   opacity: 0.95;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Roboto', sans-serif;
 }
 
 .slide-button {
   display: inline-block;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: white;
+  background: #E10600; /* Red */
+  color: #C0C0C0; /* Silver Gray */
   padding: 16px 32px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px -2px rgba(225, 6, 0, 0.3); /* Red shadow */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .slide-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 8px 25px -5px rgba(225, 6, 0, 0.4); /* Darker red shadow on hover */
 }
 
 /* Slider Navigation */
@@ -105,18 +110,19 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid #C0C0C0; /* Silver Gray border */
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .nav-dot.active {
-  background: white;
+  background: #E10600; /* Red active dot */
+  border-color: #E10600;
 }
 
 .nav-dot:hover {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(192, 192, 192, 0.7); /* Lighter silver gray on hover */
 }
 
 /* Slider Arrows */
@@ -124,8 +130,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: rgba(0, 0, 0, 0.7); /* Darker arrow background */
+  color: #C0C0C0; /* Silver Gray */
   border: none;
   width: 50px;
   height: 50px;
@@ -137,7 +143,7 @@
 }
 
 .slider-arrow:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9); /* Even darker on hover */
 }
 
 .slider-arrow.prev {
@@ -158,7 +164,7 @@
 /* Quick Services Section */
 .quick-services {
   padding: 80px 0;
-  background: white;
+  background: #0D0D0D; /* Black */
 }
 
 .quick-services h2 {
@@ -166,7 +172,8 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .services-grid {
@@ -176,12 +183,12 @@
 }
 
 .service-card {
-  background: #f8fafc;
+  background: #1E2A38; /* Dark Blue */
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #333; /* Darker border */
 }
 
 .service-card:hover {
@@ -192,37 +199,41 @@
 .service-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #E10600; /* Red */
 }
 
 .service-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .service-card p {
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .service-link {
-  color: #2563eb;
+  color: #E10600; /* Red */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
 .service-link:hover {
-  color: #1d4ed8;
+  color: #ff3333; /* Lighter red on hover */
   text-decoration: underline;
 }
 
 /* Reviews Section */
 .reviews-section {
   padding: 80px 0;
-  background: #f8fafc;
+  background: #1E2A38; /* Dark Blue */
 }
 
 .reviews-section h2 {
@@ -230,7 +241,8 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .reviews-container {
@@ -257,7 +269,7 @@
 }
 
 .review-card {
-  background: white;
+  background: #0D0D0D; /* Black */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -279,18 +291,20 @@
 .customer-info h4 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
   margin-bottom: 0.25rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .service-type {
   font-size: 0.9rem;
-  color: #2563eb;
+  color: #E10600; /* Red */
   font-weight: 500;
+  font-family: 'Roboto', sans-serif;
 }
 
 .rating {
-  color: #fbbf24;
+  color: #fbbf24; /* Keep yellow for stars */
   font-size: 1.2rem;
 }
 
@@ -299,15 +313,17 @@
 }
 
 .review-text {
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   line-height: 1.6;
   margin-bottom: 1rem;
   font-style: italic;
+  font-family: 'Roboto', sans-serif;
 }
 
 .review-date {
   font-size: 0.9rem;
-  color: #94a3b8;
+  color: #94a3b8; /* Keep original for subtle date */
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Reviews Navigation */
@@ -320,8 +336,8 @@
 }
 
 .nav-btn {
-  background: #2563eb;
-  color: white;
+  background: #E10600; /* Red */
+  color: #C0C0C0; /* Silver Gray */
   border: none;
   width: 40px;
   height: 40px;
@@ -332,12 +348,12 @@
 }
 
 .nav-btn:hover:not(:disabled) {
-  background: #1d4ed8;
+  background: #ff3333; /* Lighter red on hover */
   transform: scale(1.1);
 }
 
 .nav-btn:disabled {
-  background: #94a3b8;
+  background: #94a3b8; /* Gray for disabled */
   cursor: not-allowed;
 }
 
@@ -351,23 +367,23 @@
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: #cbd5e1;
+  background: #4a5568; /* Darker gray for inactive dots */
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .review-dot.active {
-  background: #2563eb;
+  background: #E10600; /* Red active dot */
 }
 
 .review-dot:hover {
-  background: #64748b;
+  background: #C0C0C0; /* Silver Gray on hover */
 }
 
 /* Why Choose Us Section */
 .why-choose-section {
   padding: 80px 0;
-  background: white;
+  background: #0D0D0D; /* Black */
 }
 
 .why-choose-section h2 {
@@ -375,7 +391,8 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .features-grid {
@@ -388,7 +405,7 @@
   text-align: center;
   padding: 2rem;
   border-radius: 8px;
-  background: #f8fafc;
+  background: #1E2A38; /* Dark Blue */
   transition: transform 0.3s ease;
 }
 
@@ -399,25 +416,28 @@
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #E10600; /* Red */
 }
 
 .feature-item h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .feature-item p {
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Call to Action Section */
 .cta-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: white;
+  background: #1E2A38; /* Changed from red to Dark Blue */
+  color: #C0C0C0; /* Silver Gray */
   text-align: center;
 }
 
@@ -425,6 +445,7 @@
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cta-content p {
@@ -434,6 +455,7 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Roboto', sans-serif;
 }
 
 .cta-buttons {
@@ -451,22 +473,23 @@
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cta-btn.primary {
-  background: white;
-  color: #2563eb;
+  background: #E10600; /* Red */
+  color: #C0C0C0; /* Silver Gray */
 }
 
 .cta-btn.secondary {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: #C0C0C0; /* Silver Gray */
+  border: 2px solid #C0C0C0; /* Silver Gray border */
 }
 
 .cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px -5px rgba(225, 6, 0, 0.3); /* Red shadow on hover */
 }
 
 /* Responsive Design */

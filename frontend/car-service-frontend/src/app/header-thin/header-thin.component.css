@@ -1,20 +1,95 @@
 .header-thin {
-  background-color: #333;
-  color: white;
-  padding: 5px 20px;
+  background-color: #1a1a1a; /* Slightly lighter black than main header */
+  padding: 0px 20px; /* Reduced vertical padding */
+  border-bottom: 1px solid #1a1a1a;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
 .social-icons a {
-  margin-left: 15px;
-  color: white;
-  text-decoration: none;
+  margin-right: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+  opacity: 0.7;
 }
 
 .social-icons img {
   height: 20px;
   width: 20px;
   vertical-align: middle;
+}
+
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.language-button {
+  background-color: #1a1a1a;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 0px;
+  transition: background-color 0.3s ease;
+  color: #C0C0C0;
+  font-family: 'Roboto Regular', sans-serif;
+}
+
+.language-button:hover {
+  background-color: #333;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  margin-right: 8px;
+}
+
+.language-code {
+  font-weight: normal;
+  margin-right: 8px;
+  color: #C0C0C0;
+  font-family: 'Roboto Regular', sans-serif;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  color: #C0C0C0;
+}
+
+.language-dropdown {
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  display: none;
+  right: 0; /* Align dropdown to the right */
+}
+
+.language-dropdown.show {
+  display: block;
+}
+
+.dropdown-item {
+  color: #C0C0C0;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto Regular', sans-serif;
+}
+
+.dropdown-item:hover {
+  background-color: #333;
 }

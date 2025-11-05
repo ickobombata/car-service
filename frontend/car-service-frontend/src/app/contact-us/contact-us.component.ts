@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -14,13 +15,15 @@ export class ContactUsComponent {
     message: ''
   };
 
+  constructor(private translationService: TranslationService) {} // Inject TranslationService
+
   onSubmit() {
     // Handle form submission
     console.log('Form submitted:', this.contactFormData);
     
     // Here you would typically send the data to your backend
     // For now, we'll just show an alert
-    alert('Thank you for your message! We will get back to you soon.');
+    alert(this.translationService.getTranslation('CONTACT_US.THANK_YOU_MESSAGE'));
     
     // Reset form
     this.contactFormData = {
