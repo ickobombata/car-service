@@ -1,6 +1,6 @@
 .footer {
-  background-color: #333;
-  color: white;
+  background-color: #0D0D0D; /* Black */
+  color: #C0C0C0; /* Silver Gray */
   padding: 40px 20px;
   display: flex;
   flex-wrap: wrap;
@@ -16,19 +16,21 @@
 }
 
 .footer-section h3 {
-  color: #0059ff;
+  color: #C0C0C0; /* Silver Gray */
   margin-bottom: 15px;
   font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-section p,
 .footer-section a {
-  color: #bbb;
+  color: #C0C0C0; /* Silver Gray */
   text-decoration: none;
   line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footer-section a:hover {
-  color: #fff;
+  color: #E10600; /* Red on hover */
   text-decoration: underline;
 }

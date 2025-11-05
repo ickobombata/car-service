@@ -9,10 +9,10 @@
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <div class="slide-text">
-            <h1 class="slide-title">{{ 'HOME.SLIDER1_TITLE' | translate }}</h1>
-            <p class="slide-description">{{ 'HOME.SLIDER1_TEXT' | translate }}</p>
+            <h1 class="slide-title">{{ slide.title }}</h1>
+            <p class="slide-description">{{ slide.text }}</p>
             <a *ngIf="slide.buttonText" [href]="slide.buttonLink" class="slide-button">
-              {{ 'HOME.SLIDER1_BUTTON' | translate }}
+              {{ slide.buttonText }}
             </a>
           </div>
         </div>

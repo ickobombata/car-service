@@ -1,12 +1,12 @@
 .services-container {
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: #1E2A38; /* Dark Blue */
 }
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: white;
+  background: #0D0D0D; /* Black */
+  color: #C0C0C0; /* Silver Gray */
   padding: 80px 0;
   text-align: center;
 }
@@ -16,6 +16,8 @@
   font-weight: 700;
   margin-bottom: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hero-subtitle {
@@ -23,6 +25,8 @@
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Content Wrapper */
@@ -46,19 +50,21 @@ section {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   max-width: 600px;
   margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Car Sales Section */
 .car-sales-section {
-  background: white;
+  background: #0D0D0D; /* Black */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   margin: 40px 0;
@@ -75,7 +81,7 @@ section {
   text-align: center;
   padding: 2rem;
   border-radius: 8px;
-  background: #f8fafc;
+  background: #1E2A38; /* Dark Blue */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -87,23 +93,26 @@ section {
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #E10600; /* Red */
 }
 
 .feature-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .feature-card p {
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Mechanical Services Section */
 .mechanical-services-section {
-  background: white;
+  background: #0D0D0D; /* Black */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   margin: 40px 0;
@@ -120,9 +129,10 @@ section {
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #1e293b;
-  border-bottom: 3px solid #2563eb;
+  color: #C0C0C0; /* Silver Gray */
+  border-bottom: 3px solid #E10600; /* Red border */
   padding-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .service-grid {
@@ -132,10 +142,10 @@ section {
 }
 
 .service-item {
-  background: #f8fafc;
+  background: #1E2A38; /* Dark Blue */
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid #E10600; /* Red left border */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -148,29 +158,32 @@ section {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .service-item p {
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   line-height: 1.6;
   margin-bottom: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .warranty-badge {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: white;
+  background: #E10600; /* Red */
+  color: #C0C0C0; /* Silver Gray */
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
   display: inline-block;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Warranty Section */
 .warranty-section {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  color: white;
+  background: #0D0D0D; /* Black */
+  color: #C0C0C0; /* Silver Gray */
   border-radius: 12px;
   margin: 40px 0;
   padding: 40px;
@@ -181,6 +194,8 @@ section {
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .warranty-grid {
@@ -193,7 +208,7 @@ section {
   text-align: center;
   padding: 2rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #1E2A38; /* Dark Blue */
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease;
 }
@@ -205,22 +220,27 @@ section {
 .warranty-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #E10600; /* Red */
 }
 
 .warranty-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .warranty-card p {
   opacity: 0.9;
   line-height: 1.6;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Call to Action Section */
 .cta-section {
-  background: white;
+  background: #1E2A38; /* Changed from red to Dark Blue */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   margin: 40px 0;
@@ -232,16 +252,18 @@ section {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cta-content p {
   font-size: 1.1rem;
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Roboto', sans-serif;
 }
 
 .cta-buttons {
@@ -259,27 +281,23 @@ section {
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .cta-btn.primary {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: white;
+  background: #E10600; /* Red */
+  color: #C0C0C0; /* Silver Gray */
 }
 
 .cta-btn.secondary {
   background: transparent;
-  color: #2563eb;
-  border: 2px solid #2563eb;
+  color: #C0C0C0; /* Silver Gray */
+  border: 2px solid #C0C0C0; /* Silver Gray border */
 }
 
 .cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px rgba(37, 99, 235, 0.3);
-}
-
-.cta-btn.secondary:hover {
-  background: #2563eb;
-  color: white;
+  box-shadow: 0 8px 25px -5px rgba(225, 6, 0, 0.3); /* Red shadow on hover */
 }
 
 /* Responsive Design */

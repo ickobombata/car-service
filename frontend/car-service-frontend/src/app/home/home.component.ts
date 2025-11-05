@@ -57,23 +57,33 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private startAutoSlide() {
+    if (this.slideInterval) {
+      clearInterval(this.slideInterval);
+    }
     this.slideInterval = setInterval(() => {
       this.nextSlide();
     }, 5000); // Change slide every 5 seconds
   }
 
+  private resetAutoSlide() {
+    this.startAutoSlide(); // Simply restart the timer
+  }
+
   goToSlide(index: number) {
     this.currentSlide = index;
+    this.resetAutoSlide();
   }
 
   nextSlide() {
     this.currentSlide = (this.currentSlide + 1) % this.sliderContent.length;
+    this.resetAutoSlide(); // Reset timer on manual next
   }
 
   previousSlide() {
     this.currentSlide = this.currentSlide === 0 
       ? this.sliderContent.length - 1 
       : this.currentSlide - 1;
+    this.resetAutoSlide(); // Reset timer on manual previous
   }
 
   nextReviews() {

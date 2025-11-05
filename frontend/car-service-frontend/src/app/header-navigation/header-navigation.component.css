@@ -1,15 +1,17 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #f8f8f8;
-  padding: 10px 20px;
+  background-color: #0D0D0D;
+  padding: 15px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Stack logo elements vertically */
+  align-items: flex-start; /* Align logo elements to the left */
+  margin-right: 60px;
 }
 
 .logo {
@@ -17,10 +19,46 @@
   margin-right: 10px;
 }
 
-.app-name {
-  font-size: 1.5em;
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat Bold', sans-serif;
+  color: #C0C0C0;
+  font-size: 2.5em; /* Larger font size for main logo text */
+  line-height: 0.9; /* Adjust line height for stacked text */
+}
+
+.red-slash {
+  color: #E10600;
+  font-weight: bold; /* Use a valid bolder font-weight */
+  font-size: 1.2em; /* Slightly increase font size for thickness */
+  transform: skewX(-20deg); /* Skew to make them appear wider/fatter */
+  display: inline-block; /* Required for transform to work */
+  text-shadow: none; /* Remove previous text-shadow as it might interfere */
+}
+
+.logo-main {
   font-weight: bold;
-  color: #333;
+}
+
+.logo-sub {
+  font-weight: bold;
+}
+
+.logo-details {
+  font-family: 'Roboto Regular', sans-serif;
+  color: #C0C0C0;
+  font-size: 0.8em;
+  margin-top: 5px; /* Space between main logo and details */
+  letter-spacing: 1px;
+}
+
+.app-name {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #C0C0C0;
+  font-family: 'Montserrat Bold', sans-serif;
+  display: none; /* Hide the old app name */
 }
 
 .nav-links {
@@ -28,21 +66,25 @@
   margin: 0;
   padding: 0;
   display: flex;
+  gap: 100px; /* Increased gap for better spacing */
 }
 
 .nav-links li {
-  margin-left: 20px;
+  margin-left: 0; /* Remove default margin */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #555;
-  font-weight: bold;
+  color: #C0C0C0;
+  font-family: 'Roboto Regular', sans-serif;
+  font-weight: normal;
+  font-size: 1.9em; /* Increased font size */
   padding: 5px 0;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #007bff;
+  color: #C0C0C0; /* Keep text white */
+  border-bottom: 2px solid #E10600; /* Red underline for active/hover */
 }

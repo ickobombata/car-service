@@ -1,12 +1,12 @@
 .cars-container {
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: #1E2A38; /* Dark Blue */
 }
 
 /* Header Section */
 .cars-header {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: white;
+  background: #0D0D0D; /* Black */
+  color: #C0C0C0; /* Silver Gray */
   padding: 80px 0;
   text-align: center;
 }
@@ -16,6 +16,8 @@
   font-weight: 700;
   margin-bottom: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .header-subtitle {
@@ -23,6 +25,8 @@
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Content Wrapper */
@@ -49,7 +53,8 @@
 .listing-header h2 {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .filter-controls {
@@ -60,17 +65,19 @@
 
 .filter-select {
   padding: 12px 16px;
-  border: 2px solid #e5e7eb;
+  border: 2px solid #333; /* Darker border */
   border-radius: 8px;
   font-size: 1rem;
-  background: white;
+  background: #0D0D0D; /* Black */
+  color: #C0C0C0; /* Silver Gray */
   cursor: pointer;
   transition: border-color 0.3s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
 .filter-select:focus {
   outline: none;
-  border-color: #2563eb;
+  border-color: #E10600; /* Red focus border */
 }
 
 /* Cars Grid */
@@ -81,7 +88,7 @@
 }
 
 .car-card {
-  background: white;
+  background: #0D0D0D; /* Black */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -119,23 +126,24 @@
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: white;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Roboto', sans-serif;
 }
 
 .condition-excellent {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: #10b981;
 }
 
 .condition-very-good {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background: #3b82f6;
 }
 
 .condition-good {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  background: #f59e0b;
 }
 
 .condition-fair {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  background: #ef4444;
 }
 
 .car-info {
@@ -146,7 +154,8 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .car-specs {
@@ -158,17 +167,19 @@
 
 .spec-item {
   font-size: 0.9rem;
-  color: #64748b;
-  background: #f1f5f9;
+  color: #C0C0C0; /* Silver Gray */
+  background: #1E2A38; /* Dark Blue */
   padding: 4px 8px;
   border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .car-description {
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   line-height: 1.6;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .car-features {
@@ -179,12 +190,13 @@
 }
 
 .feature-tag {
-  background: #e0f2fe;
-  color: #0369a1;
+  background: #1E2A38; /* Dark Blue */
+  color: #C0C0C0; /* Silver Gray */
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
   font-weight: 500;
+  font-family: 'Roboto', sans-serif;
 }
 
 .car-footer {
@@ -192,26 +204,28 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #333; /* Darker border */
 }
 
 .car-price {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #E10600; /* Red */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .car-warranty {
   font-size: 0.8rem;
   color: #10b981;
   font-weight: 500;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* No Results */
 .no-results {
   text-align: center;
   padding: 4rem 2rem;
-  background: white;
+  background: #0D0D0D; /* Black */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -219,13 +233,15 @@
 .no-results h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #C0C0C0; /* Silver Gray */
   margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .no-results p {
-  color: #64748b;
+  color: #C0C0C0; /* Silver Gray */
   font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .loading-spinner-container {
@@ -234,15 +250,15 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background: white;
+  background: #0D0D0D; /* Black */
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
 }
 
 .loading-spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #2563eb;
+  border: 8px solid #333; /* Darker border */
+  border-top: 8px solid #E10600; /* Red spinner top */
   border-radius: 50%;
   width: 60px;
   height: 60px;
