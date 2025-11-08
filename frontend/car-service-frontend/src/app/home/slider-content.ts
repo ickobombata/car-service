@@ -20,27 +20,27 @@ export function getSliderContent(translate: (key: string) => string): SliderCont
   return [
     {
       id: 1,
-      title: "EXPERIENCE THE FUTURE OF DRIVING",
-      text: "Explore a range of vehicles that redefine performance and elegance.",
-      backgroundImage: "assets/service/garage-1.jpg",
-      buttonText: "View Models",
+      title: translate('HOME.HEADLINE'),
+      text: translate('HOME.MARKETING_FRIENDLY'),
+      backgroundImage: "assets/style-home-page.jpg",
+      buttonText: translate('HOME.VIEW_OFFER_BUTTON'),
       buttonLink: "/cars"
     },
     {
       id: 2,
-      title: "QUALITY CAR SALES",
-      text: "Discover meticulously inspected vehicles and unparalleled customer service.",
-      backgroundImage: "assets/service/garage-interior.jpg",
-      buttonText: "Learn More",
-      buttonLink: "/about-us"
+      title: translate('HOME.SLIDER2_TITLE'),
+      text: translate('HOME.SLIDER2_TEXT'),
+      backgroundImage: "assets/service/garage-1.jpg",
+      buttonText: translate('HOME.SLIDER2_BUTTON'),
+      buttonLink: "/services"
     },
     {
       id: 3,
-      title: "YOUR TRUSTED AUTO PARTNER",
-      text: "Committed to exceptional service and a seamless car ownership experience.",
+      title: translate('HOME.SLIDER3_TITLE'),
+      text: translate('HOME.SLIDER3_TEXT'),
       backgroundImage: "assets/satisfied-clients/give-keys-to-client.jpg",
-      buttonText: "Contact Us",
-      buttonLink: "/contact-us"
+      buttonText: translate('HOME.SLIDER3_BUTTON'),
+      buttonLink: "/about-us"
     }
   ];
 }

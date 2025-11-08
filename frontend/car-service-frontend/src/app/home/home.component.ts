@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private slideInterval: any;
   private langChangeSubscription: Subscription | undefined;
 
-  constructor(private translationService: TranslationService) {} // Inject TranslationService
+  constructor(private translationService: TranslationService) { } // Inject TranslationService
 
   ngOnInit() {
     this.langChangeSubscription = this.translationService.currentLanguage$.subscribe(() => {
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     this.slideInterval = setInterval(() => {
       this.nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 7000); // Change slide every 8 seconds
   }
 
   private resetAutoSlide() {

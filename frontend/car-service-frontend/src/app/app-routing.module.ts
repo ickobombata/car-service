@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'services', component: ServicesComponent },
-  { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-us', component: AboutUsComponent },
+  { path: 'contact-us', component: ContactUsComponent },
   { path: 'cars', component: CarsComponent },
   { path: 'cars/:id', component: CarDetailComponent },
   { path: '**', redirectTo: '/home' } // Redirect unknown paths to home

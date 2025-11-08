@@ -4,14 +4,14 @@
 }
 
 /* Hero Section */
-.hero-section {
+.about-us-hero {
   background: #0D0D0D; /* Black */
   color: #C0C0C0; /* Silver Gray */
-  padding: 80px 0;
+  padding: 2rem 0;
   text-align: center;
 }
 
-.hero-content h1 {
+.about-us-hero .hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -19,10 +19,10 @@
   color: #C0C0C0; /* Silver Gray */
 }
 
-.hero-subtitle {
+.about-us-hero .hero-content p {
   font-size: 1.25rem;
   opacity: 0.9;
-  max-width: 600px;
+  max-width: 50rem;
   margin: 0 auto;
   color: #C0C0C0; /* Silver Gray */
 }
@@ -36,7 +36,7 @@
 
 /* Section Styling */
 section {
-  padding: 60px 0;
+  padding: 1rem 0;
 }
 
 section h2 {
@@ -236,8 +236,12 @@ section h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-content h1 {
+  .about-us-hero h1 {
     font-size: 2rem;
+  }
+  
+  .about-us-hero p {
+    font-size: 1rem;
   }
   
   .hero-subtitle {

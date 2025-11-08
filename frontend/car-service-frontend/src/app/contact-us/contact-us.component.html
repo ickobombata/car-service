@@ -79,15 +79,14 @@
 
       <!-- Contact Information Section -->
       <section class="contact-info-section">
-        <h2>{{ 'CONTACT_US.GET_IN_TOUCH_TITLE' | translate }}</h2>
+        <h2>{{ 'CONTACT_US.TAGLINE' | translate }}</h2>
         
         <div class="contact-methods">
           <div class="contact-method">
             <div class="method-icon">📞</div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.PHONE_TITLE' | translate }}</h3>
-              <p>{{ 'CONTACT_US.PHONE_DESCRIPTION' | translate }}</p>
-              <a href="tel:+1234567890" class="contact-link">(123) 456-7890</a>
+              <a [href]="'tel:' + ('CONTACT_US.PHONE_NUMBER' | translate)" class="contact-link">{{ 'CONTACT_US.PHONE_NUMBER' | translate }}</a>
             </div>
           </div>
 
@@ -95,8 +94,7 @@
             <div class="method-icon">📧</div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.EMAIL_TITLE' | translate }}</h3>
-              <p>{{ 'CONTACT_US.EMAIL_DESCRIPTION' | translate }}</p>
-              <a href="mailto:info&#64;carservice.com" class="contact-link">info&#64;carservice.com</a>
+              <a [href]="'mailto:' + ('CONTACT_US.EMAIL_ADDRESS' | translate)" class="contact-link">{{ 'CONTACT_US.EMAIL_ADDRESS' | translate }}</a>
             </div>
           </div>
 
@@ -104,10 +102,8 @@
             <div class="method-icon">📍</div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.ADDRESS_TITLE' | translate }}</h3>
-              <p>{{ 'CONTACT_US.ADDRESS_DESCRIPTION' | translate }}</p>
               <address class="contact-link">
-                123 Main Street<br>
-                City, State 12345
+                {{ 'CONTACT_US.ADDRESS_TEXT' | translate }}
               </address>
             </div>
           </div>
@@ -115,23 +111,13 @@
           <div class="contact-method">
             <div class="method-icon">🕒</div>
             <div class="method-content">
-              <h3>{{ 'CONTACT_US.BUSINESS_HOURS_TITLE' | translate }}</h3>
-              <p>{{ 'CONTACT_US.BUSINESS_HOURS_DESCRIPTION' | translate }}</p>
+              <h3>{{ 'CONTACT_US.WORKING_HOURS_TITLE' | translate }}</h3>
               <div class="hours">
-                <div>{{ 'CONTACT_US.BUSINESS_HOURS_WEEKDAY' | translate }}</div>
-                <div>{{ 'CONTACT_US.BUSINESS_HOURS_SATURDAY' | translate }}</div>
-                <div>{{ 'CONTACT_US.BUSINESS_HOURS_SUNDAY' | translate }}</div>
+                <div>{{ 'CONTACT_US.WORKING_HOURS_WEEKDAY' | translate }}</div>
+                <div>{{ 'CONTACT_US.WORKING_HOURS_SATURDAY' | translate }}</div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Emergency Contact -->
-        <div class="emergency-contact">
-          <h3>{{ 'CONTACT_US.EMERGENCY_SERVICE_TITLE' | translate }}</h3>
-          <p>{{ 'CONTACT_US.EMERGENCY_SERVICE_DESCRIPTION' | translate }}</p>
-          <a href="tel:+1234567891" class="emergency-link">(123) 456-7891</a>
-          <p class="emergency-note">{{ 'CONTACT_US.EMERGENCY_SERVICE_NOTE' | translate }}</p>
         </div>
       </section>
     </div>
