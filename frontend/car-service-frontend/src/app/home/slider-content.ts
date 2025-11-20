@@ -22,7 +22,7 @@ export function getSliderContent(translate: (key: string) => string): SliderCont
       id: 1,
       title: translate('HOME.HEADLINE'),
       text: translate('HOME.MARKETING_FRIENDLY'),
-      backgroundImage: "assets/style-home-page.jpg",
+      backgroundImage: "assets/service/4a20eba5-2412-4d94-957b-eca2d2d9cdf0.jpg",
       buttonText: translate('HOME.VIEW_OFFER_BUTTON'),
       buttonLink: "/cars"
     },
