@@ -47,21 +47,3 @@ To build the application for production deployment:
    ```
 
    This will compile the application into the `dist/car-service-frontend` directory, ready for deployment.
-
-
-
-# Further plan
-
-
-1. make the whole frontend app localized, each user text needs to be localized, 
-
-2. add slovenian as supported langugage format 
-3. translate all strings to slovenian
-4. Add in the slim header next to the socials a drop down button for langugage pick 
-    This dropdown should show a flag and short text for the langugage 
-    for example  
-<english-flag> EN 
-<slovenian-flag> SI
-
-For now just those two languages 
-                      

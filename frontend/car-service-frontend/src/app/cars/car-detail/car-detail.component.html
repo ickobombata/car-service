@@ -16,15 +16,14 @@
         <h1>{{ car.year }} {{ car.make }} {{ car.model }}</h1>
         <div class="car-basic-info">
           <span class="car-price">${{ car.price.toLocaleString() }}</span>
-          <span class="car-condition" [ngClass]="'condition-' + car.condition.toLowerCase().replace(' ', '-')">
-            {{ 'CAR_DETAIL.CONDITION' | translate:{carCondition: car.condition} }}
-          </span>
         </div>
         <div class="car-specs-overview">
           <span class="spec-overview">{{ 'CAR_DETAIL.MILEAGE' | translate:{carMileage: car.mileage.toLocaleString()} }}</span>
           <span class="spec-overview">{{ 'CAR_DETAIL.TRANSMISSION' | translate:{carTransmission: car.transmission} }}</span>
           <span class="spec-overview">{{ 'CAR_DETAIL.FUEL_TYPE' | translate:{carFuelType: car.fuelType} }}</span>
           <span class="spec-overview">{{ 'CAR_DETAIL.COLOR' | translate:{carColor: car.color} }}</span>
+          <span class="spec-overview">{{ 'CAR_DETAIL.HORSEPOWER' | translate:{carHorsepower: car.horsepower} }}</span>
+          <span class="spec-overview">{{ 'CAR_DETAIL.DOORS' | translate:{carDoors: car.doors} }}</span>
         </div>
       </div>
     </section>
@@ -57,16 +56,6 @@
           <p>{{ 'CAR_DETAIL.DESCRIPTION' | translate:{carDescription: car.description} }}</p>
         </section>
 
-        <section class="features-section">
-          <h2>{{ 'CAR_DETAIL.FEATURES_OPTIONS_TITLE' | translate }}</h2>
-          <div class="features-grid">
-            <div class="feature-item" *ngFor="let feature of car.features">
-              <span class="feature-icon">✓</span>
-              <span class="feature-text">{{ 'CAR_DETAIL.FEATURE_ITEM' | translate:{feature: feature} }}</span>
-            </div>
-          </div>
-        </section>
-
         <section class="warranty-section">
           <h2>{{ 'CAR_DETAIL.WARRANTY_INFORMATION_TITLE' | translate }}</h2>
           <div class="warranty-card">
@@ -81,16 +70,6 @@
 
       <!-- Right Column - Specifications & Contact -->
       <div class="details-right">
-        <section class="specifications-section">
-          <h2>{{ 'CAR_DETAIL.SPECIFICATIONS_TITLE' | translate }}</h2>
-          <div class="specs-table">
-            <div class="spec-row" *ngFor="let spec of car.specifications">
-              <span class="spec-key">{{ 'CAR_DETAIL.SPEC_KEY' | translate:{specKey: spec.key} }}</span>
-              <span class="spec-value">{{ 'CAR_DETAIL.SPEC_VALUE' | translate:{specValue: spec.value} }}</span>
-            </div>
-          </div>
-        </section>
-
         <section class="contact-section">
           <h2>{{ 'CAR_DETAIL.INTERESTED_IN_THIS_VEHICLE_TITLE' | translate }}</h2>
           <div class="contact-card">
@@ -122,10 +101,6 @@
         <section class="vehicle-info-section">
           <h2>{{ 'CAR_DETAIL.VEHICLE_INFORMATION_TITLE' | translate }}</h2>
           <div class="vehicle-info-card">
-            <div class="info-row">
-              <span class="info-label">{{ 'CAR_DETAIL.STOCK_NUMBER_LABEL' | translate }}</span>
-              <span class="info-value">{{ car.stockNumber }}</span>
-            </div>
             <div class="info-row">
               <span class="info-label">{{ 'CAR_DETAIL.VIN_LABEL' | translate }}</span>
               <span class="info-value">{{ car.vin }}</span>

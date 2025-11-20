@@ -84,7 +84,7 @@ export class CarDetailComponent implements OnInit {
         message: this.translationService.getTranslation('CAR_DETAIL.SCHEDULE_TEST_DRIVE_MESSAGE', {
           carMake: this.car?.make || '',
           carModel: this.car?.model || '',
-          carStockNumber: this.car?.stockNumber || 'N/A'
+          carVIN: this.car?.vin || 'N/A'
         })
       }
     });
@@ -98,7 +98,7 @@ export class CarDetailComponent implements OnInit {
         message: this.translationService.getTranslation('CAR_DETAIL.REQUEST_INFO_MESSAGE', {
           carMake: this.car?.make || '',
           carModel: this.car?.model || '',
-          carStockNumber: this.car?.stockNumber || 'N/A'
+          carVIN: this.car?.vin || 'N/A'
         })
       }
     });

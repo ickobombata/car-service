@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSliderModule } from '@angular/material/slider'; // Import MatSliderModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +37,10 @@ import { TranslationService } from './services/translation.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule, // Add ReactiveFormsModule here
+    HttpClientModule,
+    MatSliderModule, // Add MatSliderModule here
+    BrowserAnimationsModule // Add BrowserAnimationsModule here
   ],
   providers: [
     TranslationService

@@ -9,6 +9,19 @@
             <option value="">{{ 'CARS.ALL_MAKES_OPTION' | translate }}</option>
             <option *ngFor="let make of availableMakes" [value]="make">{{ make }}</option>
           </select>
+
+          <div class="price-slider-container">
+            <label>{{ 'CARS.PRICE_RANGE_LABEL' | translate }}:</label>
+            <span>{{ minPrice | currency:'USD':'symbol':'1.0-0' }}</span> 
+            <mat-slider [min]="minPrice" [max]="maxPrice" thumbLabel [displayWith]="formatLabel" tickInterval="1000">
+              <input matSliderThumb [formControl]="priceSliderControl">
+            </mat-slider>
+            <span>{{ priceSliderControl.value | currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+        <div class="view-toggle">
+          <button (click)="switchView('table')" [class.active]="currentView === 'table'">{{ 'CARS.TABLE_VIEW' | translate }}</button>
+          <button (click)="switchView('list')" [class.active]="currentView === 'list'">{{ 'CARS.LIST_VIEW' | translate }}</button>
         </div>
       </div>
 
@@ -17,13 +30,36 @@
         <p>{{ 'CARS.LOADING_CARS_MESSAGE' | translate }}</p>
       </div>
 
-      <div class="cars-grid" *ngIf="!isLoading">
+      <!-- Table View -->
+      <div *ngIf="currentView === 'table' && !isLoading" class="cars-grid">
         <div class="car-card" *ngFor="let car of filteredCars" (click)="viewCarDetail(car.id)">
           <div class="car-image-container">
             <img [src]="getMainImage(car)" [alt]="car.make + ' ' + car.model" class="car-image">
           </div>
           <div class="car-info">
             <h3 class="car-title">{{ car.make }} {{ car.model }}</h3>
+            <p>{{ car.year }}</p>
+            <p>{{ car.price | currency:'USD':'symbol':'1.0-0' }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- List View -->
+      <div *ngIf="currentView === 'list' && !isLoading" class="cars-list">
+        <div class="car-list-item" *ngFor="let car of filteredCars" (click)="viewCarDetail(car.id)">
+          <div class="car-list-image-container">
+            <img [src]="getMainImage(car)" [alt]="car.make + ' ' + car.model" class="car-list-image">
+          </div>
+          <div class="car-list-info">
+            <h3 class="car-list-title">{{ car.year }} {{ car.make }} {{ car.model }}</h3>
+            <p class="car-list-price">{{ car.price | currency:'USD':'symbol':'1.0-0' }}</p>
+            <p>{{ 'CARS.MILEAGE' | translate }}: {{ car.mileage | number }}</p>
+            <p>{{ 'CARS.TRANSMISSION' | translate }}: {{ car.transmission }}</p>
+            <p>{{ 'CARS.FUEL_TYPE' | translate }}: {{ car.fuelType }}</p>
+            <p>{{ 'CARS.COLOR' | translate }}: {{ car.color }}</p>
+            <p>{{ 'CARS.HORSEPOWER' | translate }}: {{ car.horsepower }}</p>
+            <p>{{ 'CARS.DOORS' | translate }}: {{ car.doors }}</p>
+            <p>{{ 'CARS.WARRANTY' | translate }}: {{ car.warranty }}</p>
           </div>
         </div>
       </div>

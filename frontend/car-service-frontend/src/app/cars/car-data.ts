@@ -30,22 +30,19 @@ export interface Car {
   id: string;
   make: string;
   model: string;
-  year: number; // Re-introduced
-  price: number; // Re-introduced
-  mileage: number; // Re-introduced
-  condition: 'Excellent' | 'Very Good' | 'Good' | 'Fair'; // Re-introduced
-  transmission: 'Automatic' | 'Manual' | ''; // Re-introduced
-  fuelType: 'Gasoline' | 'Diesel' | 'Hybrid' | 'Electric' | ''; // Re-introduced
-  engine: string; // Re-introduced
-  color: string; // Re-introduced
-  description: string; // Re-introduced
-  features: string[]; // Re-introduced
+  year: number;
+  price: number;
+  mileage: number;
+  transmission: 'Automatic' | 'Manual' | '';
+  fuelType: 'Gasoline' | 'Diesel' | 'Hybrid' | 'Electric' | '';
+  color: string;
+  description: string;
   images: CarImage[];
-  specifications: CarSpec[]; // Re-introduced
-  warranty: string; // Re-introduced
-  vin: string; // Re-introduced
-  stockNumber: string; // Re-introduced
-  dateAdded: string; // Re-introduced
+  horsepower: string;
+  doors: number;
+  warranty: string;
+  vin: string;
+  dateAdded: string;
 }
 
 export function mapPocketbaseCarToCar(pbCar: PocketbaseCar): Car {
@@ -56,25 +53,19 @@ export function mapPocketbaseCarToCar(pbCar: PocketbaseCar): Car {
     year: 0, // Placeholder
     price: 0, // Placeholder
     mileage: 0, // Placeholder
-    condition: 'Good', // Placeholder
     transmission: '', // Placeholder
     fuelType: '', // Placeholder
-    engine: '', // Placeholder
     color: '', // Placeholder
     description: '', // Placeholder
-    features: [], // Placeholder
     images: pbCar.images.map((imgName) => ({
       url: `https://avtorevolucija.duckdns.org/api/files/${pbCar.collectionId}/${pbCar.id}/${imgName}`,
       alt: `${pbCar.name} ${pbCar.model} image`,
       isMain: true, // Placeholder
     })),
-    specifications: [
-      { key: 'Horsepower', value: pbCar.specs.hp ? pbCar.specs.hp.toString() : 'N/A' },
-      { key: 'Doors', value: pbCar.specs.doors ? pbCar.specs.doors.toString() : 'N/A' },
-    ],
+    horsepower: pbCar.specs.hp ? pbCar.specs.hp.toString() : 'N/A',
+    doors: pbCar.specs.doors ? pbCar.specs.doors : 0,
     warranty: '', // Placeholder
     vin: '', // Placeholder
-    stockNumber: '', // Placeholder
     dateAdded: '', // Placeholder
   };
 }

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Car } from './car-data';
 import { CarService } from './car.service';
 import { TranslationService } from '../services/translation.service';
+import { FormControl } from '@angular/forms'; // Import FormControl
 
 @Component({
   selector: 'app-cars',
@@ -14,13 +15,20 @@ export class CarsComponent implements OnInit {
   filteredCars: Car[] = [];
   availableMakes: string[] = [];
   selectedMake = '';
-  // selectedPriceRange = ''; // Removed as price is no longer in Car interface
+  minPrice: number = 0; // New: Min price for slider
+  maxPrice: number = 0; // New: Max price for slider
+  priceSliderControl = new FormControl(0); // Use FormControl for the slider
   isLoading: boolean = true; // Loading indicator
+  currentView: 'table' | 'list' = 'table'; // New property for view switching
 
   constructor(private router: Router, private carService: CarService, private translationService: TranslationService) {}
 
   ngOnInit() {
     this.loadCars();
+    // Subscribe to slider value changes to filter cars
+    this.priceSliderControl.valueChanges.subscribe(() => {
+      this.filterCars();
+    });
   }
 
   public loadCars() {
@@ -32,6 +40,12 @@ export class CarsComponent implements OnInit {
           this.cars = response;
           this.filteredCars = [...this.cars];
           this.availableMakes = [...new Set(this.cars.map(car => car.make))].sort();
+
+          // Initialize min/max prices for slider
+          this.minPrice = Math.min(...this.cars.map(car => car.price));
+          this.maxPrice = Math.max(...this.cars.map(car => car.price));
+          this.priceSliderControl.setValue(this.maxPrice); // Set initial slider value to max price
+
           this.isLoading = false; // Set loading to false after real data is loaded
         },
         error: (error) => {
@@ -45,27 +59,21 @@ export class CarsComponent implements OnInit {
   filterCars() {
     this.filteredCars = this.cars.filter(car => {
       const makeMatch = !this.selectedMake || car.make === this.selectedMake;
-      // const priceMatch = this.checkPriceRange(car.price); // Removed as price is no longer in Car interface
-      return makeMatch; // Removed priceMatch
+      const priceMatch = car.price <= (this.priceSliderControl.value || 0); // Use FormControl value for filtering
+      return makeMatch && priceMatch;
     });
   }
 
-  // private checkPriceRange(price: number): boolean { // Removed as price is no longer in Car interface
-  //   if (!this.selectedPriceRange) return true;
-    
-  //   switch (this.selectedPriceRange) {
-  //     case '0-20000':
-  //       return price < 20000;
-  //     case '20000-25000':
-  //       return price >= 20000 && price <= 25000;
-  //     case '25000-30000':
-  //       return price >= 25000 && price <= 30000;
-  //     case '30000+':
-  //       return price > 30000;
-  //     default:
-  //       return true;
-  //   }
-  // }
+  formatLabel(value: number | null): string {
+    if (!value) {
+      return `0`;
+    }
+    return `${value}`; // Or format as currency: `${value | currency:'USD':'symbol':'1.0-0'}`
+  }
+
+  switchView(view: 'table' | 'list') {
+    this.currentView = view;
+  }
 
   getMainImage(car: Car): string {
     return car.images[0].url;
