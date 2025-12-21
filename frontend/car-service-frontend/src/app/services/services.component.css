@@ -54,6 +54,39 @@ section {
   font-family: 'Montserrat', sans-serif;
 }
 
+.section-tag {
+  display: inline-block;
+  background-color: rgba(225, 6, 0, 0.1);
+  color: #E10600;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  border: 1px solid rgba(225, 6, 0, 0.3);
+}
+
+.main-headline {
+  font-size: 1.2rem !important;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto !important;
+  color: #C0C0C0;
+  font-weight: 400 !important;
+  opacity: 0.9;
+  font-family: 'Roboto', sans-serif;
+}
+
+.services-subheadline {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #C0C0C0;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1rem;
+}
+
 .section-subtitle {
   font-size: 1.1rem;
   color: #C0C0C0; /* Silver Gray */

@@ -7,24 +7,41 @@
 .about-us-hero {
   background: #0D0D0D; /* Black */
   color: #C0C0C0; /* Silver Gray */
-  padding: 2rem 0;
-  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  margin: 40px 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .about-us-hero .hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #C0C0C0; /* Silver Gray */
 }
 
-.about-us-hero .hero-content p {
-  font-size: 1.25rem;
-  opacity: 0.9;
-  max-width: 50rem;
+.about-us-hero .text-content {
+  max-width: 800px;
   margin: 0 auto;
-  color: #C0C0C0; /* Silver Gray */
+  text-align: left;
+}
+
+.about-us-hero .text-content h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1.5rem 0;
+  color: #C0C0C0;
+  text-align: left;
+}
+
+.about-us-hero .text-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  color: #C0C0C0;
 }
 
 /* Content Wrapper */
@@ -39,6 +56,34 @@ section {
   padding: 1rem 0;
 }
 
+.benefits-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.benefits-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #C0C0C0;
+  font-size: 1.1rem;
+}
+
+.benefits-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #E10600; /* Red */
+  font-weight: bold;
+}
+
+.footnote {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
 section h2 {
   font-size: 2.5rem;
   font-weight: 600;
@@ -46,75 +91,6 @@ section h2 {
   margin-bottom: 3rem;
   color: #C0C0C0; /* Silver Gray */
   font-family: 'Montserrat', sans-serif;
-}
-
-/* Story Section */
-.story-section {
-  background: #0D0D0D; /* Black */
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  margin: 40px 0;
-}
-
-.section-content {
-  padding: 40px;
-}
-
-.text-content p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #C0C0C0; /* Silver Gray */
-  margin-bottom: 1.5rem;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Values Section */
-.values-section {
-  background: #0D0D0D; /* Black */
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  margin: 40px 0;
-  padding: 40px;
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.value-card {
-  text-align: center;
-  padding: 2rem;
-  border-radius: 8px;
-  background: #1E2A38; /* Dark Blue */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.value-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #E10600; /* Red */
-}
-
-.value-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #C0C0C0; /* Silver Gray */
-  font-family: 'Montserrat', sans-serif;
-}
-
-.value-card p {
-  color: #C0C0C0; /* Silver Gray */
-  line-height: 1.6;
-  font-family: 'Roboto', sans-serif;
 }
 
 /* Team Section */
@@ -173,62 +149,6 @@ section h2 {
 }
 
 .description {
-  color: #C0C0C0; /* Silver Gray */
-  line-height: 1.6;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Why Choose Us Section */
-.why-choose-section {
-  background: #0D0D0D; /* Black */
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  margin: 40px 0;
-  padding: 40px;
-}
-
-.features-list {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
-  border-radius: 8px;
-  background: #1E2A38; /* Dark Blue */
-  transition: background-color 0.3s ease;
-}
-
-.feature-item:hover {
-  background: #333; /* Slightly lighter dark blue on hover */
-}
-
-.feature-icon {
-  background: #E10600; /* Red */
-  color: #C0C0C0; /* Silver Gray */
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.feature-text h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #C0C0C0; /* Silver Gray */
-  font-family: 'Montserrat', sans-serif;
-}
-
-.feature-text p {
   color: #C0C0C0; /* Silver Gray */
   line-height: 1.6;
   font-family: 'Roboto', sans-serif;

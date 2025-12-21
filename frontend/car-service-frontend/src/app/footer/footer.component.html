@@ -1,26 +1,32 @@
 <footer class="footer">
   <div class="footer-section">
-    <h3>Contact Us</h3>
-    <p>Email: info&#64;carservice.com</p>
-    <p>Phone: +1 (123) 456-7890</p>
-    <p>Address: 123 Car Service Lane, Auto City</p>
+    <h3>{{ 'FOOTER.CONTACT_US' | translate }}</h3>
+    <p><strong>{{ 'CONTACT_US.COMPANY_NAME_VALUE' | translate }}</strong></p>
+    <p>{{ 'CONTACT_US.EMAIL_TITLE' | translate }}: <a [href]="'mailto:' + ('CONTACT_US.EMAIL_ADDRESS' | translate)">{{ 'CONTACT_US.EMAIL_ADDRESS' | translate }}</a></p>
+    <p>{{ 'CONTACT_US.PHONE_TITLE' | translate }}: <a [href]="'tel:' + ('CONTACT_US.PHONE_NUMBER' | translate)">{{ 'CONTACT_US.PHONE_NUMBER' | translate }}</a></p>
+    <p>{{ 'CONTACT_US.VAT_ID_TEXT' | translate }}</p>
+    <p>{{ 'CONTACT_US.REG_NO_TEXT' | translate }}</p>
   </div>
   <div class="footer-section">
-    <h3>Our Location</h3>
+    <h3>{{ 'FOOTER.OUR_LOCATION' | translate }}</h3>
+    <p><strong>{{ 'CONTACT_US.REGISTERED_ADDRESS_LABEL' | translate }}:</strong><br>{{ 'CONTACT_US.REGISTERED_ADDRESS_VALUE' | translate }}</p>
+    <p><strong>{{ 'CONTACT_US.LOCATION_ADDRESS_LABEL' | translate }}:</strong><br>{{ 'CONTACT_US.LOCATION_ADDRESS_VALUE' | translate }}</p>
     <p>
-      <a href="https://maps.google.com/?q=123+Car+Service+Lane" target="_blank" rel="noopener noreferrer">
-        View on Map
+      <a href="https://www.google.com/maps?q=Kajakaška+cesta+40,+1211+Ljubljana+–+Šmartno,+Slovenia" target="_blank" rel="noopener noreferrer">
+        {{ 'FOOTER.VIEW_ON_MAP' | translate }}
       </a>
     </p>
   </div>
   <div class="footer-section">
-    <h3>About Us</h3>
-    <p>Providing top-notch car services since 2000. Your trusted partner for all automotive needs.</p>
+    <h3>{{ 'FOOTER.ABOUT_US' | translate }}</h3>
+    <p>{{ 'FOOTER.ABOUT_US_DESCRIPTION' | translate }}</p>
   </div>
-  <div class="footer-section">
-    <h3>Working Hours</h3>
-    <p>Mon - Fri: 8:00 - 17:00</p>
-    <p>Sat: 9:00 - 13:00</p>
-    <p>Sun: Closed</p>
+  <div class="footer-section">    
+    <h3>{{ 'CONTACT_US.WORKING_HOURS_TITLE' | translate }}</h3>
+    <div class="hours">
+      <div>{{ 'CONTACT_US.WORKING_HOURS_WEEKDAY' | translate }}</div>
+      <div>{{ 'CONTACT_US.WORKING_HOURS_SATURDAY' | translate }}</div>
+      <div>{{ 'CONTACT_US.WORKING_HOURS_SUNDAY' | translate }}</div>
+    </div>
   </div>
 </footer>

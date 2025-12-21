@@ -49,7 +49,7 @@ export function getCustomerReviews(translate: (key: string) => string): Review[]
   return [
     {
       id: 1,
-      customerName: "Sarah Johnson",
+      customerName: "Janez Novak",
       rating: 5,
       reviewText: translate('HOME.REVIEW1_TEXT'),
       serviceType: translate('HOME.REVIEW1_SERVICE_TYPE'),
@@ -57,7 +57,7 @@ export function getCustomerReviews(translate: (key: string) => string): Review[]
     },
     {
       id: 2,
-      customerName: "Mike Davis",
+      customerName: "Marko Zupančič",
       rating: 5,
       reviewText: translate('HOME.REVIEW2_TEXT'),
       serviceType: translate('HOME.REVIEW2_SERVICE_TYPE'),
@@ -65,7 +65,7 @@ export function getCustomerReviews(translate: (key: string) => string): Review[]
     },
     {
       id: 3,
-      customerName: "Emily Rodriguez",
+      customerName: "Ana Kovač",
       rating: 5,
       reviewText: translate('HOME.REVIEW3_TEXT'),
       serviceType: translate('HOME.REVIEW3_SERVICE_TYPE'),
@@ -73,7 +73,7 @@ export function getCustomerReviews(translate: (key: string) => string): Review[]
     },
     {
       id: 4,
-      customerName: "David Thompson",
+      customerName: "Boštjan Hrovat",
       rating: 5,
       reviewText: translate('HOME.REVIEW4_TEXT'),
       serviceType: translate('HOME.REVIEW4_SERVICE_TYPE'),
@@ -81,7 +81,7 @@ export function getCustomerReviews(translate: (key: string) => string): Review[]
     },
     {
       id: 5,
-      customerName: "Lisa Chen",
+      customerName: "Maja Lesjak",
       rating: 5,
       reviewText: translate('HOME.REVIEW5_TEXT'),
       serviceType: translate('HOME.REVIEW5_SERVICE_TYPE'),
@@ -89,7 +89,7 @@ export function getCustomerReviews(translate: (key: string) => string): Review[]
     },
     {
       id: 6,
-      customerName: "Robert Wilson",
+      customerName: "Gregor Golob",
       rating: 5,
       reviewText: translate('HOME.REVIEW6_TEXT'),
       serviceType: translate('HOME.REVIEW6_SERVICE_TYPE'),
