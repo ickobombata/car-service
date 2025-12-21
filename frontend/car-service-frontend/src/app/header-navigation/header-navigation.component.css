@@ -3,68 +3,32 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #0D0D0D;
-  padding: 15px 20px;
+  padding: 0 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
   display: flex;
-  flex-direction: column; /* Stack logo elements vertically */
-  align-items: flex-start; /* Align logo elements to the left */
+  align-items: center;
   margin-right: 60px;
+  height: 100%;
 }
 
-.logo {
-  height: 40px;
-  margin-right: 10px;
+.logo-img {
+  height: 100px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Montserrat Bold', sans-serif;
-  color: #C0C0C0;
-  font-size: 2.5em; /* Larger font size for main logo text */
-  line-height: 0.9; /* Adjust line height for stacked text */
-}
-
-.red-slash {
-  color: #E10600;
-  font-weight: bold; /* Use a valid bolder font-weight */
-  font-size: 1.2em; /* Slightly increase font size for thickness */
-  transform: skewX(-20deg); /* Skew to make them appear wider/fatter */
-  display: inline-block; /* Required for transform to work */
-  text-shadow: none; /* Remove previous text-shadow as it might interfere */
-}
-
-.logo-main {
-  font-weight: bold;
-}
-
-.logo-sub {
-  font-weight: bold;
-}
-
-.logo-details {
-  font-family: 'Roboto Regular', sans-serif;
-  color: #C0C0C0;
-  font-size: 0.8em;
-  margin-top: 5px; /* Space between main logo and details */
-  letter-spacing: 1px;
-}
-
-.app-name {
-  font-size: 1.8em;
-  font-weight: bold;
-  color: #C0C0C0;
-  font-family: 'Montserrat Bold', sans-serif;
-  display: none; /* Hide the old app name */
+.logo-img:hover {
+  transform: scale(1.05);
 }
 
 .nav-links {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 20px 0;
   display: flex;
   gap: 100px; /* Increased gap for better spacing */
 }
