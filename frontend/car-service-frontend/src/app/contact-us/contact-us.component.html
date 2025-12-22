@@ -71,8 +71,8 @@
               placeholder="{{ 'CONTACT_US.MESSAGE_PLACEHOLDER' | translate }}"></textarea>
           </div>
 
-          <button type="submit" class="submit-btn" [disabled]="!contactForm.form.valid">
-            {{ 'CONTACT_US.SEND_MESSAGE_BUTTON' | translate }}
+          <button type="submit" class="submit-btn" [disabled]="!contactForm.form.valid || isSubmitting">
+            {{ isSubmitting ? ('CONTACT_US.SENDING_BUTTON' | translate) : ('CONTACT_US.SEND_MESSAGE_BUTTON' | translate) }}
           </button>
         </form>
       </section>
