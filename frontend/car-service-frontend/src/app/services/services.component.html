@@ -113,8 +113,8 @@
         <h2>{{ 'SERVICES.READY_TO_GET_STARTED_TITLE' | translate }}</h2>
         <p>{{ 'SERVICES.CTA_DESCRIPTION' | translate }}</p>
         <div class="cta-buttons">
-          <a href="/contact-us" class="cta-btn primary">{{ 'SERVICES.SCHEDULE_SERVICE_BUTTON' | translate }}</a>
-          <a *ngIf="showCars" href="/cars" class="cta-btn secondary">{{ 'SERVICES.VIEW_AVAILABLE_CARS_BUTTON' | translate }}</a>
+          <a [routerLink]="['/contact-us']" class="cta-btn primary">{{ 'SERVICES.SCHEDULE_SERVICE_BUTTON' | translate }}</a>
+          <a *ngIf="showCars" [routerLink]="['/cars']" class="cta-btn secondary">{{ 'SERVICES.VIEW_AVAILABLE_CARS_BUTTON' | translate }}</a>
         </div>
       </div>
     </section>

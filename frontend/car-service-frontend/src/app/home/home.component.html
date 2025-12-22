@@ -11,7 +11,7 @@
           <div class="slide-text">
             <h1 class="slide-title">{{ slide.title }}</h1>
             <p class="slide-description">{{ slide.text }}</p>
-            <a *ngIf="slide.buttonText" [href]="slide.buttonLink" class="slide-button">
+            <a *ngIf="slide.buttonText" [routerLink]="[slide.buttonLink]" class="slide-button">
               {{ slide.buttonText }}
             </a>
           </div>
@@ -45,7 +45,7 @@
           </div>
           <h3>{{ 'HOME.CAR_SALES_TITLE' | translate }}</h3>
           <p>{{ 'HOME.CAR_SALES_DESCRIPTION' | translate }}</p>
-          <a href="/cars" class="service-link">{{ 'HOME.LEARN_MORE_BUTTON' | translate }}</a>
+          <a [routerLink]="['/cars']" class="service-link">{{ 'HOME.LEARN_MORE_BUTTON' | translate }}</a>
         </div>
         <div class="service-card">
           <div class="service-icon">
@@ -53,7 +53,7 @@
           </div>
           <h3>{{ 'HOME.MECHANICAL_REPAIRS_TITLE' | translate }}</h3>
           <p>{{ 'HOME.MECHANICAL_REPAIRS_DESCRIPTION' | translate }}</p>
-          <a href="/services" class="service-link">{{ 'HOME.LEARN_MORE_BUTTON' | translate }}</a>
+          <a [routerLink]="['/services']" class="service-link">{{ 'HOME.LEARN_MORE_BUTTON' | translate }}</a>
         </div>
         <div class="service-card">
           <div class="service-icon">
@@ -61,7 +61,7 @@
           </div>
           <h3>{{ 'HOME.QUICK_SERVICE_TITLE' | translate }}</h3>
           <p>{{ 'HOME.QUICK_SERVICE_DESCRIPTION' | translate }}</p>
-          <a href="/contact-us" class="service-link">{{ 'HOME.SCHEDULE_NOW_BUTTON' | translate }}</a>
+          <a [routerLink]="['/contact-us']" class="service-link">{{ 'HOME.SCHEDULE_NOW_BUTTON' | translate }}</a>
         </div>
       </div>
 
@@ -164,8 +164,8 @@
         <h2>{{ 'HOME.CTA_TITLE' | translate }}</h2>
         <p>{{ 'HOME.CTA_DESCRIPTION' | translate }}</p>
         <div class="cta-buttons">
-          <a href="/contact-us" class="cta-btn primary">{{ 'HOME.CONTACT_US_BUTTON' | translate }}</a>
-          <a href="/services" class="cta-btn secondary">{{ 'HOME.OUR_SERVICES_BUTTON' | translate }}</a>
+          <a [routerLink]="['/contact-us']" class="cta-btn primary">{{ 'HOME.CONTACT_US_BUTTON' | translate }}</a>
+          <a [routerLink]="['/services']" class="cta-btn secondary">{{ 'HOME.OUR_SERVICES_BUTTON' | translate }}</a>
         </div>
       </div>
     </section>
