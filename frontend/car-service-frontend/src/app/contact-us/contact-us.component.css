@@ -181,13 +181,24 @@
 }
 
 .method-icon {
-  font-size: 2.5rem;
   flex-shrink: 0;
-  color: #C0C0C0; /* Silver Gray to match image style */
-  opacity: 0.6;
   width: 50px;
   display: flex;
   justify-content: center;
+}
+
+.icon-img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.icon-img-small {
+  height: 20px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  vertical-align: middle;
+  margin-right: 8px;
 }
 
 .method-content h3 {
@@ -336,9 +347,14 @@
 }
 
 .card-icon {
-  font-size: 3rem;
   margin-bottom: 1rem;
   color: #E10600; /* Red */
+  display: flex;
+  justify-content: center;
+}
+
+.card-icon .icon-img {
+  height: 60px;
 }
 
 .info-card h3 {

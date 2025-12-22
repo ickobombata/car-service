@@ -124,9 +124,17 @@ section {
 }
 
 .feature-icon {
-  font-size: 3rem;
   margin-bottom: 1rem;
   color: #E10600; /* Red */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-icon-img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .feature-card h3 {
@@ -141,6 +149,37 @@ section {
   color: #C0C0C0; /* Silver Gray */
   line-height: 1.6;
   font-family: 'Roboto', sans-serif;
+}
+
+.discount-link-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.discount-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: #C0C0C0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border: 1px solid #E10600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.discount-info-link:hover {
+  background: rgba(225, 6, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(225, 6, 0, 0.2);
+}
+
+.link-icon {
+  height: 24px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 /* Mechanical Services Section */

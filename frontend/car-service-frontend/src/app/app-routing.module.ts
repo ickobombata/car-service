@@ -6,6 +6,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarDetailComponent } from './cars/car-detail/car-detail.component';
+import { environment } from './config';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,13 +14,18 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  { path: 'cars', component: CarsComponent },
-  { path: 'cars/:id', component: CarDetailComponent },
+  ...(environment.showCars ? [
+    { path: 'cars', component: CarsComponent },
+    { path: 'cars/:id', component: CarDetailComponent }
+  ] : []),
   { path: '**', redirectTo: '/home' } // Redirect unknown paths to home
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

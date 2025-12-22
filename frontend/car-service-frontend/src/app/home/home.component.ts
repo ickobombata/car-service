@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { getSliderContent, getCustomerReviews, SliderContent, Review } from './slider-content';
 import { TranslationService } from '../services/translation.service';
 import { Subscription } from 'rxjs';
+import { environment } from '../config';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentSlide = 0;
   currentReviewIndex = 0;
   reviewGroups: Review[][] = [];
+  showCars = environment.showCars;
   private slideInterval: any;
   private langChangeSubscription: Subscription | undefined;
 
@@ -38,7 +40,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private initializeTranslatedContent() {
     const translate = (key: string) => this.translationService.getTranslation(key);
-    this.sliderContent = getSliderContent(translate);
+    let allSliderContent = getSliderContent(translate);
+    
+    if (!this.showCars) {
+      this.sliderContent = allSliderContent.filter(slide => slide.buttonLink !== "/cars");
+    } else {
+      this.sliderContent = allSliderContent;
+    }
+    
     this.customerReviews = getCustomerReviews(translate);
     this.initializeReviews(); // Re-initialize reviews to reflect new translations
   }

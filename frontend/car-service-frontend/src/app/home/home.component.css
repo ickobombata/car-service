@@ -196,10 +196,90 @@
   box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+.discount-highlight {
+  border: 2px solid #E10600; /* Red border to highlight */
+  background: rgba(225, 6, 0, 0.05); /* Slight red tint */
+}
+
+/* Benefits Banner Styling */
+.benefits-banner {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: #1E2A38;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.benefits-banner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px -5px rgba(225, 6, 0, 0.2);
+}
+
+.banner-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  flex-grow: 1;
+}
+
+.banner-text h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #C0C0C0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.banner-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #C0C0C0;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.banner-action {
+  flex-shrink: 0;
+}
+
+.banner-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #E10600;
+  color: #C0C0C0 !important;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.banner-btn:hover {
+  background: #ff3333;
+  transform: scale(1.05);
+  text-decoration: none !important;
+}
+
 .service-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #E10600; /* Red */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Make it white to match the theme */
 }
 
 .service-card h3 {
@@ -561,5 +641,20 @@
   .cta-btn {
     width: 100%;
     max-width: 300px;
+  }
+
+  .benefits-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .banner-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .banner-btn {
+    width: 100%;
   }
 }

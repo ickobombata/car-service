@@ -86,7 +86,9 @@
         
         <div class="contact-methods">
           <div class="contact-method">
-            <div class="method-icon">🏠</div>
+            <div class="method-icon">
+              <img src="assets/icons/repair-shop.png" alt="Company" class="icon-img">
+            </div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.COMPANY_NAME_LABEL' | translate }}</h3>
               <p>{{ 'CONTACT_US.COMPANY_NAME_VALUE' | translate }}</p>
@@ -94,7 +96,9 @@
           </div>
 
           <div class="contact-method">
-            <div class="method-icon">📍</div>
+            <div class="method-icon">
+              <img src="assets/icons/placeholder.png" alt="Address" class="icon-img">
+            </div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.REGISTERED_ADDRESS_LABEL' | translate }}</h3>
               <p>{{ 'CONTACT_US.REGISTERED_ADDRESS_VALUE' | translate }}</p>
@@ -102,7 +106,9 @@
           </div>
 
           <div class="contact-method">
-            <div class="method-icon">📍</div>
+            <div class="method-icon">
+              <img src="assets/icons/placeholder.png" alt="Location" class="icon-img">
+            </div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.LOCATION_ADDRESS_LABEL' | translate }}</h3>
               <p>{{ 'CONTACT_US.LOCATION_ADDRESS_VALUE' | translate }}</p>
@@ -110,7 +116,9 @@
           </div>
 
           <div class="contact-method">
-            <div class="method-icon">ℹ️</div>
+            <div class="method-icon">
+              <img src="assets/icons/information.png" alt="Information" class="icon-img">
+            </div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.VAT_REG_LABEL' | translate }}</h3>
               <p>{{ 'CONTACT_US.VAT_ID_TEXT' | translate }}</p>
@@ -119,7 +127,9 @@
           </div>
 
           <div class="contact-method">
-            <div class="method-icon">📞</div>
+            <div class="method-icon">
+              <img src="assets/icons/call.png" alt="Phone" class="icon-img">
+            </div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.PHONE_TITLE' | translate }}</h3>
               <a [href]="'tel:' + ('CONTACT_US.PHONE_NUMBER' | translate)" class="contact-link">{{ 'CONTACT_US.PHONE_NUMBER' | translate }}</a>
@@ -127,7 +137,9 @@
           </div>
 
           <div class="contact-method">
-            <div class="method-icon">📧</div>
+            <div class="method-icon">
+              <img src="assets/icons/email.png" alt="Email" class="icon-img">
+            </div>
             <div class="method-content">
               <h3>{{ 'CONTACT_US.EMAIL_TITLE' | translate }}</h3>
               <a [href]="'mailto:' + ('CONTACT_US.EMAIL_ADDRESS' | translate)" class="contact-link">{{ 'CONTACT_US.EMAIL_ADDRESS' | translate }}</a>
@@ -153,8 +165,8 @@
         </iframe>
       </div>
       <div class="map-info">
-        <p>📍 <strong>{{ 'CONTACT_US.OUR_LOCATION' | translate }}</strong></p>
-        <p>🚗 <strong>{{ 'CONTACT_US.PARKING' | translate }}</strong></p>
+        <p><img src="assets/icons/placeholder.png" alt="Location" class="icon-img-small"> <strong>{{ 'CONTACT_US.OUR_LOCATION' | translate }}</strong></p>
+        <p><img src="assets/icons/sedan.png" alt="Parking" class="icon-img-small"> <strong>{{ 'CONTACT_US.PARKING' | translate }}</strong></p>
         <p>🚌 <strong>{{ 'CONTACT_US.PUBLIC_TRANSPORT' | translate }}</strong></p>
       </div>
     </section>
@@ -163,12 +175,16 @@
     <section class="additional-info">
       <div class="info-cards">
         <div class="info-card">
-          <div class="card-icon">⚡</div>
+          <div class="card-icon">
+            <img src="assets/icons/rapid.png" alt="Quick Response" class="icon-img">
+          </div>
           <h3>{{ 'CONTACT_US.QUICK_RESPONSE_TITLE' | translate }}</h3>
           <p>{{ 'CONTACT_US.QUICK_RESPONSE_DESCRIPTION' | translate }}</p>
         </div>
         <div class="info-card">
-          <div class="card-icon">⭐</div>
+          <div class="card-icon">
+            <img src="assets/icons/rating.png" alt="Customer Satisfaction" class="icon-img">
+          </div>
           <h3>{{ 'CONTACT_US.CUSTOMER_SATISFACTION_TITLE' | translate }}</h3>
           <p>{{ 'CONTACT_US.CUSTOMER_SATISFACTION_DESCRIPTION' | translate }}</p>
         </div>

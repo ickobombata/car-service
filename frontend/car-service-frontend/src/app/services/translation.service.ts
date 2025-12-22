@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { environment } from '../config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TranslationService {
   private translations: any = {};
-  private _currentLanguage = new BehaviorSubject<string>('en-US'); // Default to 'en-US'
+  private defaultLanguage = environment.production ? 'si-SI' : 'en-US';
+  private _currentLanguage = new BehaviorSubject<string>(this.defaultLanguage);
   public readonly currentLanguage$ = this._currentLanguage.asObservable();
 
   constructor(private http: HttpClient) {
@@ -17,7 +19,7 @@ export class TranslationService {
 
   private initLanguage() {
     const storedLang = localStorage.getItem('userLang');
-    const initialLang = storedLang || 'en-US';
+    const initialLang = storedLang || this.defaultLanguage;
     this.loadTranslations(initialLang).subscribe();
   }
 

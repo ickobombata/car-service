@@ -1,4 +1,5 @@
 export const environment = {
-    production: false,
-    useMockData: true
+    production: true,
+    useMockData: true,
+    showCars: true
   };

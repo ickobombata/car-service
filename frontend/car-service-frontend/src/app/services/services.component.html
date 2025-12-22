@@ -10,49 +10,78 @@
       
       <div class="sales-features">
         <div class="feature-card">
-          <div class="feature-icon">🚗</div>
+          <div class="feature-icon">
+            <img src="assets/icons/computer.png" alt="Diagnostics" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.VEHICLE_DIAGNOSTICS' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">⚡</div>
+          <div class="feature-icon">
+            <img src="assets/icons/part.png" alt="Quick Service" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.QUICK_CAR_SERVICE' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🔧</div>
+          <div class="feature-icon">
+            <img src="assets/icons/repair-shop.png" alt="Major Service" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.MAJOR_CAR_SERVICE' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">⚙️</div>
+          <div class="feature-icon">
+            <img src="assets/icons/car.png" alt="Brakes" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.BRAKE_PAD_REPLACEMENT' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🧽</div>
+          <div class="feature-icon">
+            <img src="assets/icons/air-filter.png" alt="Filters" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.FILTER_REPLACEMENT' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">💧</div>
+          <div class="feature-icon">
+            <img src="assets/icons/oil.png" alt="Oil Change" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.OIL_CHANGE' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🛢️</div>
+          <div class="feature-icon">
+            <img src="assets/icons/automatic-transmission.png" alt="Transmission Oil" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.AUTOMATIC_TRANSMISSION_OIL_CHANGE' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">⛓️</div>
+          <div class="feature-icon">
+            <img src="assets/icons/timing-belt.png" alt="Timing Belt" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.TIMING_BELT_REPLACEMENT' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🔌</div>
+          <div class="feature-icon">
+            <img src="assets/icons/spark-plug.png" alt="Spark Plugs" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.SPARK_PLUG_REPLACEMENT' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🔩</div>
+          <div class="feature-icon">
+            <img src="assets/icons/clutch.png" alt="Clutch" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.CLUTCH_REPLACEMENT' | translate }}</h3>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🛠️</div>
+          <div class="feature-icon">
+            <img src="assets/icons/service.png" alt="Other Services" class="service-icon-img">
+          </div>
           <h3>{{ 'SERVICES.ADDITIONAL_SERVICES' | translate }}</h3>
         </div>
+      </div>
+
+      <div class="discount-link-container">
+        <a [routerLink]="['/about-us']" fragment="lifelong-discount" class="discount-info-link">
+          <img src="assets/icons/best-price.png" alt="Discount" class="link-icon">
+          <span>{{ 'SERVICES.DISCOUNT_INFO_LINK' | translate }}</span>
+        </a>
       </div>
     </section>
 
@@ -85,7 +114,7 @@
         <p>{{ 'SERVICES.CTA_DESCRIPTION' | translate }}</p>
         <div class="cta-buttons">
           <a href="/contact-us" class="cta-btn primary">{{ 'SERVICES.SCHEDULE_SERVICE_BUTTON' | translate }}</a>
-          <a href="/cars" class="cta-btn secondary">{{ 'SERVICES.VIEW_AVAILABLE_CARS_BUTTON' | translate }}</a>
+          <a *ngIf="showCars" href="/cars" class="cta-btn secondary">{{ 'SERVICES.VIEW_AVAILABLE_CARS_BUTTON' | translate }}</a>
         </div>
       </div>
     </section>

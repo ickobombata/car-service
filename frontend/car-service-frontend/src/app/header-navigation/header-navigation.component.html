@@ -4,7 +4,7 @@
   </div>
   <ul class="nav-links">
     <li><a routerLink="/home" routerLinkActive="active">{{ 'HEADER.HOME' | translate }}</a></li>
-    <li><a routerLink="/cars" routerLinkActive="active">{{ 'HEADER.MODELS' | translate }}</a></li>
+    <li *ngIf="showCars"><a routerLink="/cars" routerLinkActive="active">{{ 'HEADER.MODELS' | translate }}</a></li>
     <li><a routerLink="/services" routerLinkActive="active">{{ 'HEADER.SERVICES' | translate }}</a></li>
     <li><a routerLink="/about-us" routerLinkActive="active">{{ 'HEADER.ABOUT_US' | translate }}</a></li>
     <li><a routerLink="/contact-us" routerLinkActive="active">{{ 'HEADER.CONTACT_US' | translate }}</a></li>
