@@ -15,7 +15,8 @@
 }
 
 .logo-img {
-  height: 100px;
+  margin: 5px 20px 2px 30px;
+  height: 80px;
   width: auto;
   display: block;
   transition: transform 0.3s ease;
