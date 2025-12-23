@@ -9,6 +9,20 @@ import { environment } from '../config';
 })
 export class HeaderNavigationComponent {
   showCars = environment.showCars;
+  isMenuOpen = false;
 
   constructor(public translationService: TranslationService) { } // Inject TranslationService
+
+  getLogoPath(): string {
+    const currentLang = this.translationService.getCurrentLanguage();
+    return currentLang === 'en-US' ? 'assets/logo-en.png' : 'assets/logo-transperent-small.png';
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 }
