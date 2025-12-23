@@ -7,7 +7,7 @@ import { TranslationService } from './services/translation.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'car-service-frontend';
+  title = 'avtorevolucija';
 
   constructor(
     private translationService: TranslationService
