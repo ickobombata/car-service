@@ -574,6 +574,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .slider-nav {
+    display: none;
+  }
+
   .hero-slider {
     height: 60vh;
     min-height: 400px;
