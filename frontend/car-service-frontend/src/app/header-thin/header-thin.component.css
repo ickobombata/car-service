@@ -5,6 +5,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+  z-index: 1100; /* Higher than the main navbar (1000) */
 }
 
 .social-icons a {
@@ -68,11 +70,12 @@
   background-color: #1a1a1a;
   min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 1200;
   border-radius: 5px;
   overflow: hidden;
   display: none;
   right: 0; /* Align dropdown to the right */
+  top: 100%; /* Ensure it appears below the button */
 }
 
 .language-dropdown.show {
@@ -88,6 +91,9 @@
   width: 100%;
   box-sizing: border-box;
   font-family: 'Roboto Regular', sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .dropdown-item:hover {

@@ -6,18 +6,18 @@
       <span class="dropdown-arrow">▼</span>
     </button>
     <div class="language-dropdown" [class.show]="dropdownOpen">
-      <a href="#" (click)="changeLanguage('en-US')" class="dropdown-item">
+      <button (click)="changeLanguage('en-US'); $event.preventDefault()" class="dropdown-item">
         <img src="assets/british-flag.png" alt="{{ 'LANG.ENGLISH_FLAG_ALT' | translate }}" class="flag-icon">
         <span class="language-code">{{ 'LANG.ENGLISH_CODE' | translate }}</span>
-      </a>
-      <a href="#" (click)="changeLanguage('si-SI')" class="dropdown-item">
+      </button>
+      <button (click)="changeLanguage('si-SI'); $event.preventDefault()" class="dropdown-item">
         <img src="assets/slovenian-flag.png" alt="{{ 'LANG.SLOVENIAN_FLAG_ALT' | translate }}" class="flag-icon">
         <span class="language-code">{{ 'LANG.SLOVENIAN_CODE' | translate }}</span>
-      </a>
+      </button>
     </div>
   </div>
   <div class="social-icons">
-    <a href="#" class="social-icon"><img src="assets/facebook.png" alt="{{ 'SOCIAL.FACEBOOK' | translate }}"></a>
-    <a href="#" class="social-icon"><img src="assets/instagram.png" alt="{{ 'SOCIAL.INSTAGRAM' | translate }}"></a>
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon"><img src="assets/facebook.png" alt="{{ 'SOCIAL.FACEBOOK' | translate }}"></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon"><img src="assets/instagram.png" alt="{{ 'SOCIAL.INSTAGRAM' | translate }}"></a>
   </div>
 </div>
