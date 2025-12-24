@@ -80,49 +80,6 @@
       </div>
     </section>
 
-    <!-- Customer Reviews Section -->
-    <section class="reviews-section">
-      <h2>{{ 'HOME.CUSTOMER_REVIEWS_TITLE' | translate }}</h2>
-      <div class="reviews-container">
-        <div class="reviews-slider">
-          <div class="reviews-track" [style.transform]="'translateX(-' + (currentReviewIndex * 100) + '%)'">
-            <div class="review-group" *ngFor="let group of reviewGroups">
-              <div class="review-card" *ngFor="let review of group">
-                <div class="review-header">
-                  <div class="customer-info">
-                    <h4>{{ review.customerName }}</h4>
-                    <span class="service-type">{{ review.serviceType }}</span>
-                  </div>
-                  <div class="rating">
-                    <span *ngFor="let star of getStars(review.rating)" class="star">★</span>
-                  </div>
-                </div>
-                <p class="review-text">"{{ review.reviewText }}"</p>
-                <span class="review-date">{{ formatDate(review.date) }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Review Navigation -->
-        <div class="reviews-nav">
-          <button (click)="previousReviews()" 
-                  [disabled]="currentReviewIndex === 0"
-                  class="nav-btn prev">‹</button>
-          <div class="review-dots">
-            <button *ngFor="let group of reviewGroups; let i = index"
-                    (click)="goToReviewGroup(i)"
-                    [class.active]="currentReviewIndex === i"
-                    class="review-dot">
-            </button>
-          </div>
-          <button (click)="nextReviews()" 
-                  [disabled]="currentReviewIndex === reviewGroups.length - 1"
-                  class="nav-btn next">›</button>
-        </div>
-      </div>
-    </section>
-
     <!-- Why Choose Us Section -->
     <section class="why-choose-section">
       <h2>{{ 'HOME.WHY_CHOOSE_US_TITLE' | translate }}</h2>
