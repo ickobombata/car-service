@@ -16,6 +16,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarDetailComponent } from './cars/car-detail/car-detail.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TranslatePipe } from './shared/translate.pipe';
 import { TranslationService } from './services/translation.service';
 
@@ -31,6 +32,7 @@ import { TranslationService } from './services/translation.service';
     AboutUsComponent,
     CarsComponent,
     CarDetailComponent,
+    PrivacyPolicyComponent,
     TranslatePipe
   ],
   imports: [

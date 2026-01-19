@@ -106,6 +106,17 @@
   min-height: 120px;
 }
 
+.form-privacy-notice {
+  margin-top: 10px;
+}
+
+.form-privacy-notice p {
+  font-size: 0.85rem;
+  color: #C0C0C0;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
 .submit-btn {
   background: #E10600; /* Red */
   color: #C0C0C0; /* Silver Gray */

@@ -34,3 +34,26 @@
   color: #E10600; /* Red on hover */
   text-decoration: underline;
 }
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.footer-bottom a {
+  color: #888;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #C0C0C0;
+  text-decoration: underline;
+}
