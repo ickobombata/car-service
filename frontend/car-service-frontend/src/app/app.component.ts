@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslationService } from './services/translation.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,14 @@ import { TranslationService } from './services/translation.service';
 })
 export class AppComponent implements OnInit {
   title = 'avtorevolucija';
+  isLoaded$: Observable<boolean>;
 
   constructor(
     private translationService: TranslationService
-  ) {}
+  ) {
+    this.isLoaded$ = this.translationService.isLoaded$;
+  }
 
   ngOnInit() {
-    // The TranslationService now handles initial language loading from local storage
-    // based on this.translationService.getCurrentLanguage()
   }
 }

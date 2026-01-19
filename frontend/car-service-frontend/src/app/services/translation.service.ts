@@ -12,15 +12,26 @@ export class TranslationService {
   private defaultLanguage = environment.production ? 'si-SI' : 'en-US';
   private _currentLanguage = new BehaviorSubject<string>(this.defaultLanguage);
   public readonly currentLanguage$ = this._currentLanguage.asObservable();
+  private _isLoaded = new BehaviorSubject<boolean>(false);
+  public readonly isLoaded$ = this._isLoaded.asObservable();
 
-  constructor(private http: HttpClient) {
-    this.initLanguage();
-  }
+  constructor(private http: HttpClient) { }
 
-  private initLanguage() {
+  public init(): Promise<void> {
     const storedLang = localStorage.getItem('userLang');
     const initialLang = storedLang || this.defaultLanguage;
-    this.loadTranslations(initialLang).subscribe();
+    return new Promise((resolve) => {
+      this.loadTranslations(initialLang).subscribe({
+        next: () => {
+          this._isLoaded.next(true);
+          resolve();
+        },
+        error: () => {
+          this._isLoaded.next(true); // Still resolve to allow app to load
+          resolve();
+        }
+      });
+    });
   }
 
   public loadTranslations(lang: string): Observable<any> {
@@ -53,7 +64,11 @@ export class TranslationService {
 
   public setLanguagePreference(lang: string): void {
     localStorage.setItem('userLang', lang);
-    this.loadTranslations(lang).subscribe();
+    this._isLoaded.next(false);
+    this.loadTranslations(lang).subscribe({
+      next: () => this._isLoaded.next(true),
+      error: () => this._isLoaded.next(true)
+    });
   }
 
   public getCurrentLanguage(): string {

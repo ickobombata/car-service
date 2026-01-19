@@ -19,6 +19,11 @@ import { CarDetailComponent } from './cars/car-detail/car-detail.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TranslatePipe } from './shared/translate.pipe';
 import { TranslationService } from './services/translation.service';
+import { APP_INITIALIZER } from '@angular/core';
+
+export function translationFactory(translationService: TranslationService) {
+  return () => translationService.init();
+}
 
 @NgModule({
   declarations: [
@@ -45,7 +50,13 @@ import { TranslationService } from './services/translation.service';
     BrowserAnimationsModule // Add BrowserAnimationsModule here
   ],
   providers: [
-    TranslationService
+    TranslationService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: translationFactory,
+      deps: [TranslationService],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
