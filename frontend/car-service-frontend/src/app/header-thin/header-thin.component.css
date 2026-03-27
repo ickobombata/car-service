@@ -9,6 +9,16 @@
   z-index: 1100; /* Higher than the main navbar (1000) */
 }
 
+.promo-text {
+  position: absolute;
+  left: 40%;
+  transform: translateX(-50%);
+  color: #E10600; /* Red */
+  font-family: 'Roboto Regular', sans-serif;
+  font-size: 26px;
+  white-space: nowrap;
+}
+
 .social-icons a {
   margin-right: 15px;
   transition: opacity 0.3s ease;

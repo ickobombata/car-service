@@ -1,4 +1,5 @@
 <div class="header-thin">
+  <div class="promo-text">{{ 'PROMO.OIL_CHANGE' | translate }}</div>
   <div class="language-switcher">
     <button class="language-button" (click)="toggleDropdown()">
       <img src="assets/{{ getDisplayLanguage(currentLang) === 'en' ? 'british-flag.png' : 'slovenian-flag.png' }}" alt="{{ getDisplayLanguage(currentLang) === 'en' ? ('LANG.ENGLISH_FLAG_ALT' | translate) : ('LANG.SLOVENIAN_FLAG_ALT' | translate) }}" class="flag-icon">
