@@ -579,34 +579,41 @@
   }
 
   .hero-slider {
+    /* Used by slide padding + arrows so text never sits under the nav buttons */
+    --slider-arrow-inset: 15px;
+    --slider-arrow-size: 40px;
+    --slider-arrow-gap: 14px;
     height: 60vh;
     min-height: 400px;
   }
-  
+
   .slide-title {
     font-size: 2.5rem;
   }
-  
+
   .slide-description {
     font-size: 1.1rem;
   }
-  
+
   .slide-content {
-    padding: 0 3%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: calc(var(--slider-arrow-inset) + var(--slider-arrow-size) + var(--slider-arrow-gap));
+    padding-right: calc(var(--slider-arrow-inset) + var(--slider-arrow-size) + var(--slider-arrow-gap));
   }
-  
+
   .slider-arrow {
-    width: 40px;
-    height: 40px;
+    width: var(--slider-arrow-size);
+    height: var(--slider-arrow-size);
     font-size: 20px;
   }
-  
+
   .slider-arrow.prev {
-    left: 15px;
+    left: var(--slider-arrow-inset);
   }
-  
+
   .slider-arrow.next {
-    right: 15px;
+    right: var(--slider-arrow-inset);
   }
   
   .content-wrapper {
